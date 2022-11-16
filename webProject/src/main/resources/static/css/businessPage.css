@@ -1,0 +1,50 @@
+.contents_area{
+    width: 100%;
+    margin-bottom:50px;
+    text-align: center;
+}
+
+.contents{
+ 
+    display: flex;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    height: 500px;
+    width: 1200px;
+}
+.business_title{
+    font-size: 40px;
+    color:gray;
+}
+.business{
+    border: 1px solid royalblue;
+    height: 200px;
+    width: 200px;
+    padding: 30px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.business_1 {
+    height: 150px;
+    width: 150px;
+    margin: auto;
+    line-height: 40px;
+}
+
+.business a{
+    font-size: 25px;
+    width: 150px;
+    height: 150px;
+    text-decoration-line: none;
+    color: royalblue;
+    
+}
+
+.business a img{
+    width: 150px;
+    height: 150px;
+    
+}
+

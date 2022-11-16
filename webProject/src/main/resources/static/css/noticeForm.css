@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.page-header h3{
+	
+    text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+
+  #button {
+    margin-top:50px;
+    padding:9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 86, 88);
+    border:none;
+    cursor:pointer;
+    text-align:center;
+    width:100px;
+    height:40px;
+    font-size:12px;
+}
+	#button:hover{
+    background-color: #ccd3db;
+    color:aliceblue;
+}
+
+input[type="text"],input[type="textarea"] {
+    height: 18px;
+    margin-left: 28px;
+    width: 500px;
+    
+}
+input[type="text"] {
+	height:22px;
+}
+
+
+select#category {
+    float: left;
+    margin-left: 28px;
+}
+
+#title {
+	width:500px;
+}
+
+#inp_content {
+    width: 500px;
+    margin-left: 28px;
+    height: 200px;
+}
+ 

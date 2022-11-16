@@ -1,0 +1,334 @@
+@charset "UTF-8";
+
+.mainbig {
+    margin: auto;
+    width: 100%;
+}
+
+
+.maindiv0 {
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+.maindiv1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+.imgball {
+    width: 160px;
+    height: 160px;
+    border-radius: 90px;
+}
+
+.maindiv2_goods {
+    width: 100%;
+    padding-top:30px;
+    
+    
+}
+
+.maindiv2 {
+    width: 100%;
+    margin-top: 40px;
+  
+    
+    
+}
+.maindiv2-1 {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+
+}
+.maindiv2-2 {
+width: 400px;
+height: 400px;
+
+text-align:center;
+color: gray;
+}
+
+.btn-blue, .btn-blue-mini {
+	text-decoration: none;
+	color: white;
+	padding: 10px 30px;
+	display: inline-block;
+	position: relative;
+	border-radius: 4px;
+    background-color: rgb(251, 182, 0);
+}
+
+.btn-blue:hover , .btn-blue-mini:hover, .mypage_info_btn:hover{
+	    background-color: rgb(230, 167, 0);
+}
+
+
+
+
+.maindiv2-3 {
+    width: 400px;
+    height: 400px;
+    text-align: center;
+ 
+}
+.maindiv2-4 {
+    background-color: white;
+    width: 280px;
+    margin: 0 auto;
+
+   border-radius: 10px;
+    
+}
+.card-img-top {
+    width: 280px;
+
+   border-radius: 6px;
+}
+.main1package {
+    color: rgba(0, 0, 0, 0.575);
+}
+
+
+
+.city-h2 {
+    color: rgba(0, 0, 0, 0.685);
+    margin-bottom: 30px;
+       margin-top: 30px;
+}
+
+.main_fixed{
+	width: 100%;
+	height:134px;
+	 background-color: whitesmoke;
+
+	
+}
+
+.main_fixed_1{
+	width: 1300px;
+    
+    margin: auto;	
+}
+
+.main_fixed_a{
+    float: left;
+    margin-top: 20px;
+}
+
+.main_fixed_b{
+    float: right;
+    margin-top: 20px;
+}
+
+
+.main_best_articles_cover {
+   
+    margin: auto;
+}
+.main_best_article_bigbox {
+    width: 1200px;
+    justify-content: space-between;
+    display: flex;
+}
+
+.best_article_img {
+    width: 300px;
+    height: 200px;;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.best_article_title {
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 250px;
+    line-height: 50px;
+    color: rgb(63, 60, 60);
+}
+
+
+/* 메인 숙소 상품 */
+.product_box{
+  
+    display: flex;
+    margin: auto;
+}
+.maindiv2_title{
+   text-align: center;
+   font-size: 30px;
+    color: rgb(63, 60, 60);
+}
+
+.goods_score{
+	width:70px;
+	float: left;
+    font-size: 14px;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgb(255, 131, 83);
+    color: #fff;
+    text-align: center;        
+}
+
+.product_item{
+    height: 500px;
+    width: 380px;
+    margin: 0 10px;
+    border: 1px solid whitesmoke;
+   background-color: whitesmoke;
+    border-radius: 20px;
+  
+   
+}
+
+.img_wrap {
+   width:    380px;
+   height: 300px;
+    padding: 0px;
+    
+}
+
+.img_wrap img {
+   width: 100%;
+   height: 100%;
+    border-radius: 5%;
+}
+
+.product_box a {
+    text-decoration: none;
+  
+}
+
+.txt_wrap {
+    font-family: Noto_m;
+    width: 310px;
+    height: 100px;
+    padding: 30px;	
+    margin: 0px;
+     line-height: 20px;
+
+}
+
+.company_name {
+    width: 100%;
+    height:30px;
+    font-weight: 500; 
+    font-size: 17px;
+    overflow: hidden;
+    margin-bottom: 5px;
+}
+
+.road_address {
+    width: 100%;
+    height:50px;
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.sub_div{
+background-color: whitesmoke;
+
+}
+
+.goods_price {
+	height:50px;
+    width: 100px;
+    text-align: right;
+    font-family: Noto_m!important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff682c;
+    float: right;
+}
+
+.maindiv2_wrap{
+    width: 100%;
+    height: 1000px;
+    border-bottom: 1px solid  gainsboro;
+   
+}
+
+/* area_cs 시작 */
+.area_cs_info{
+    width: 1200px;
+    height: 230px;
+    display: flex;
+    margin:auto;
+}
+
+.cs_info{
+    width: 600px;
+    height: 230px;
+    
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+  
+}
+
+.cs_info ul{
+    list-style: none;   
+}
+
+.area_cs_number{
+    width: 200px;
+    height: 200px;
+    
+  
+    font-size: 30px;
+    float: left;
+}
+
+.area_cs_time{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid gainsboro;
+ 
+}
+
+.mypage_info{
+    width: 700px;
+    height: 250px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.mypage_info ul{
+    list-style: none;
+    width: 500px;
+   
+}
+
+.mypage_info ul li{
+    display: inline-block;
+    font-size: 18px;
+}
+
+.mypage_info_btn{
+  width: 150px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: none;
+   	    background-color: rgb(251, 182, 0);
+    color: #fff;
+
+}
+/*area_cs 끝*/
+

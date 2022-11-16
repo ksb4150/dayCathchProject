@@ -1,0 +1,90 @@
+.container{
+	margin-left: 190px;
+}
+
+.page-header h2{
+	
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+[type=button] {
+   
+   padding:9px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(84, 86, 88);
+   border:none;
+   cursor:pointer;
+   text-align:center;
+   width:100px;
+   height:40px;
+   font-size:12px;
+
+}
+[type=button]:hover {
+   background-color: #ccd3db;
+   color:aliceblue;
+}
+
+#inp_noticeNO, #inp_writer, #inp_title, #inp_hit, #inp_date, #inp_content{
+   font-size:13px;
+   font-weight:300;
+   padding:3px;
+   width:60px;
+}
+
+#inp_noticeNO2, #inp_writer2, #i_title, #inp_hit2 {
+   height:25px;
+   width: 430px;
+   margin-bottom:5px;
+}
+
+#i_content{
+    width: 430px;
+    height: 230px;
+    text-align: left;
+}
+
+
+.page {
+    margin-bottom: 60px;
+}
+
+button {
+    margin-top: 20px;
+}
+
+#inp_date2 {
+    padding-left: 10px;
+    margin-left: 1px;
+    width: 420px;
+    height: 20px;
+}
+
+#tr_btn_modify{
+   margin-right:200px;
+}
+
+#tr_btn{
+   margin-right:150px;
+}
+
+ #button {
+    margin-top:50px;
+    padding:9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 86, 88);
+    border:none;
+    cursor:pointer;
+    text-align:center;
+    width:100px;
+    height:40px;
+    font-size:12px;
+}
+	#button:hover{
+    background-color: #ccd3db;
+    color:aliceblue;
+}

@@ -1,0 +1,315 @@
+@charset "utf-8";
+* {
+	font-family: OhouseSans, "Noto Sans KR", "Apple SD Gothic Neo", "맑은 고딕", "Malgun Gothic", sans-serif;
+}
+.map_wrap, .map_wrap * {margin:0;padding:0;font-family:'Malgun Gothic',dotum,'����',sans-serif;font-size:12px;}
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
+.map_wrap {position:relative;width:100%;height:500px;}
+#menu_wrap {position:absolute;top:0;left:0;bottom:0;width:250px;margin:10px 0 30px 10px;padding:5px;overflow-y:auto;background:rgba(255, 255, 255, 0.7);z-index: 1;font-size:12px;border-radius: 10px;}
+.bg_white {background:#fff;}
+#menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
+#menu_wrap .option{text-align: center;}
+#menu_wrap .option p {margin:10px 0;}  
+#menu_wrap .option button {margin-left:5px;}
+#placesList li {list-style: none;}
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .item .info{padding:10px 0 10px 55px;}
+#placesList .info .gray {color:#8a8a8a;}
+#placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
+#placesList .info .tel {color:#009900;}
+#placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}
+
+#select_places_wrap {
+	position: absolute;
+	width: 240px;
+	height: 100%;
+	margin: 0px;
+	top: 0px;
+	left: 970px;
+	z-index: 1;
+	font-size:12px;
+	border-radius: 10px;
+	border: 1px solid black;
+}
+
+#select_places_wrap li {
+	list-style-type: none;
+}
+
+.contents_area{
+	width: 100%;
+    margin-bottom:30px;
+}
+
+#main_image {
+	width: 100%;
+	height: 500px;
+	margin-bottom:30px;
+}
+
+.board_content {
+	width: 1200px;
+	margin: auto;
+}
+
+.content_wrap {
+	margin-bottom: 50px;
+}
+
+#uid {
+	margin-bottom: 5px;
+}
+
+#title {
+	margin-bottom: 10px;
+	border: none;
+}
+
+.board_content input:focus {
+	outline: none;
+}
+
+#place_wrap {
+	width: 100%;
+}
+
+#summernote {
+	margin-bottom: 10px;
+}
+
+.triangle {
+	width: 0px;
+	height: 0px;
+	border-right: 10px solid #666666;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	transform: rotate( -90deg );
+	margin-left: 110px;
+	margin : 8px 0px 2px 110px;
+	padding: 0px;
+}
+
+.select_item_wrap {
+	display: flex;
+	width: 95%;
+	margin: auto;
+	margin-top: 5px;
+}
+
+.select_checkbox {
+	width: 15px;
+	margin-right: 10px;
+}
+
+.select_custom_info {
+    width: 200px;
+    height: 50px;
+	padding: 10px;
+	margin-left: 5px;
+    border: 1px solid black;
+}
+
+
+.select_place_name {
+	margin-bottom: 2px;
+}
+
+.tit_wrap {
+	width: 1200px;
+	height: 180px;
+	display: flex;
+}
+
+.articleCategory {
+	height: 50px;
+	margin-top: 100px;
+	margin-right: 5px;
+}
+
+#title {
+	width: 950px;
+	height: 50px;
+	margin-top: 100px;
+	font-size: 20px;
+}
+
+.pic_wrap {
+	width: 150px;
+	height: 100px;
+}
+
+.view_title_wrap {
+	margin: auto;
+	display: block;
+	border: none;
+}
+
+.view_category {
+	width: 100%;
+	font-size: 16px;
+	margin-bottom: 5px;
+	color: #656e75;
+	border: none;
+}
+
+#view_title {
+	width: 100%;
+	height: 50px;
+	font-size: 34px;
+	color: #2f3438;
+	border: none;
+	margin-bottom: 7px;
+}
+
+#view_date {
+	color: #656e75;
+	font-size: 16px;
+}
+
+#view_userName {
+	font-weight: 700;
+	color: #2f3438;
+	font-size: 16px;
+	border: none;
+}
+
+.pointer_event {
+	pointer-events: none;
+}
+
+#view_content {
+	clear: both;
+}
+
+.user_info_wrap {
+	height: 60px;
+}
+
+.user_info {
+	width: 100px;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: rgb(47, 52, 56);
+	padding: 5px;
+}
+
+#view_board p {
+
+	color: #2f3438;
+    font-size: 16px;
+}
+
+.comments_area {
+	width: 1200px;
+	margin: auto;
+}
+
+.comment_form_wrap {
+	display: flex;
+	height: 70px;
+	margin-bottom: 10px;
+}
+
+.comment_user_info {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.comment_user {
+	width: 1050px;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 700;
+	color: rgb(47, 52, 56);
+}
+
+.comment_write_day {
+	float: right;
+	font-size: 16px;
+}
+
+#comment_content {
+	width: 1000px;
+	height: 100%;
+	font-size: 16px;
+	border: 1px solid rgb(218, 221, 224);
+	border-radius: 4px;
+	margin: 0 10px 0 10px;
+	background: white;
+}
+
+.comment_content {
+	color: rgb(47, 52, 56);
+	font-size: 16px;
+	margin: 5px 0 5px 0;
+}
+
+.form_button_wrap {
+	width: 110px;
+	height: 100%;
+	margin: 0;
+}
+
+.form_button_wrap input {
+	width: 100%;
+	height: 50px;
+	border: none;
+}
+
+.comment_info {
+	width: 100%;
+	display: flex;
+}
+
+.comment_wrap {
+	 background-color: whitesmoke; 
+	 padding: 20px;
+	 border-radius: 20px;
+}
+
+.comments ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.comments ul li {
+	margin-bottom: 10px;
+}
+
+.nonuserInfo {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.heart {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 19px;
+}
+
+#my_map_btn {
+	display: block;
+}

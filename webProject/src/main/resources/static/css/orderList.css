@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+.orderlistsection h3{
+	
+    text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+td {
+	padding:2px;
+}
+.orderlistsection {
+	width:900px;
+	margin: auto;
+	text-align: center;
+}
+
+.orderlist_table {     
+    text-align: center;
+    width: 900px;
+    background-color: #fff;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.orderlist_top_tr {
+    background-color: whitesmoke;
+}
+
+.orderlist_tr {
+
+	background-color: #fff;
+}
+
+.goods_name {
+                float: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 350px;
+            }
+
+
+#orderList_button1 {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #007ac9;
+	color: white;
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	cursor: pointer;
+	transition: 0.5s;
+	margin-top: 25px;
+
+}
+
+#orderList_button1:active, #orderList_button1:hover, #orderList_button1:focus {
+	background: orange;
+	outline: 0;
+}
+
+#orderList_button1:disabled {
+	opacity: 0.5;
+}
+
+
+.pageInfo{
+  	list-style : none;
+  	display: inline-block;
+    margin: 0 auto;
+	text-align: center;	
+  }
+  
+.pageInfo li{
+  	float: left;
+    font-size: 20px;
+    margin-left: 18px;
+    padding: 7px;
+    font-weight: 500;
+  }
+  
+ a:link {color:black; text-decoration: none;}
+ a:visited {color:black; text-decoration: none;}
+ a:hover {color:black; text-decoration: underline;}
+  
+  .active{
+  	background-color: #cdd5ec;
+  	}
+
+
+
+.btn_order + .btn_return{
+	margin-left:15px;
+	
+}
+
+

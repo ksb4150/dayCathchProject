@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.springboot.board.dao.BoardDAO">
+	  <resultMap id="boardResult" type="boardVO">
+		<result property="articleNO" column="articleNO" />
+		<result property="uid" column="uid" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="userName" column="userName" />
+		<result property="viewCnt" column="viewCnt" />
+		<result property="commentCnt" column="commentCnt" />
+		<result property="articleCategory" column="articleCategory" />
+		<result property="writeDate" column="writeDate" />
+		<result property="addressList" column="addressList" />
+		<result property="mainImageFileName" column="mainImageFileName" />
+		<result property="likecount" column="likecount" />
+	</resultMap>
+	
+	<resultMap id="boardCommentResult" type="boardCommentVO">
+		<result property="articleNO" column="articleNO" />
+		<result property="commentNo" column="commentNo" />
+		<result property="uid" column="uid" />
+		<result property="userName" column="userName" />
+		<result property="commentContent" column="commentContent" />
+		<result property="regDate" column="regDate" />
+	</resultMap>
+
+	<!-- 썸머노트  -->
+	 <insert id="insertBoard" parameterType="boardVO">
+     <![CDATA[
+        INSERT INTO BOARD(articleNO, uid, title, content, userName, articleCategory, addressList, mainImageFileName)
+        VALUES (#{articleNO}, #{uid}, #{title}, #{content}, #{userName}, #{articleCategory}, #{addressList}, #{mainImageFileName})
+      ]]>
+    </insert>
+    
+    <select id="selectViewArticle" parameterType="int" resultType="boardVO">
+    	 <![CDATA[
+    	 	select *
+    	 	from board
+    	 	where articleNO = #{articleNO}
+    	 ]]>
+    </select>
+    
+    <select id="selectAllComment" parameterType="int" resultType="boardCommentVO">
+    	 <![CDATA[
+    	 	select *
+    	 	from boardcomment
+    	 	where articleNO = #{articleNO}
+    	 ]]>
+    </select>
+    
+    <select id="selectOneArticle" parameterType="int" resultType="String">
+    	 <![CDATA[
+    	 	select content
+    	 	from board
+    	 	where articleNO = #{articleNO}
+    	 ]]>
+    </select>
+    
+    <update id="updateViewCount" parameterType="int">
+    	update board set viewCnt = viewCnt+1
+    	where articleNO = #{articleNO}
+    </update>
+    
+    <delete id="deleteArticle" parameterType="int">
+		<![CDATA[
+			DELETE FROM board WHERE articleNO = #{articleNO}
+		]]>
+	</delete>
+	
+	 <update id="updateArticle" parameterType="boardVO">
+    	update board set title=#{title}, content=#{content}, mainImageFileName=#{mainImageFileName}
+    	where articleNO = #{articleNO} and uid = #{uid}
+    </update>
+    
+    <insert id="addBoardComment" parameterType="boardCommentVO">
+    	<![CDATA[
+   			INSERT INTO boardcomment(articleNO, uid, userName, commentContent)
+   			values(#{articleNO}, #{uid}, #{userName}, #{commentContent})
+    	]]>
+    </insert>
+    
+  <!-- 커뮤니티 내가 쓴 글 최신순  -->
+	<select id="myArticleList1" resultMap="boardResult">
+	
+		select * from board where uid = #{uid} order by writeDate DESC limit #{skip}, #{amount};
+	
+	</select>
+
+
+	<!-- 커뮤니티 내가 쓴 글 인기순  -->
+	<select id="myArticleList2" resultMap="boardResult">
+	
+		select * from board where uid = #{uid} order by viewCnt DESC limit #{skip}, #{amount};
+	
+	</select>
+
+
+	<!--카테고리별 커뮤니티 내가 쓴 글-->
+	<select id="myArticleList3" resultMap="boardResult">
+	
+		select * from board where articleCategory = #{search} and uid = #{uid} order by writeDate DESC limit #{skip}, #{amount};
+	
+	</select>
+	
+	<!-- 내가 쓴 커뮤니티글 전체 수 -->
+	<select id="totalArticlePage1" resultType="int">
+	
+		select count(*) from board where uid = #{uid};
+	
+	</select>
+
+	<!-- 내가 쓴 카테고리별 커뮤니티글 전체 수 -->
+	<select id="totalArticlePage2" resultType="int">
+	
+		select count(*) from board where articleCategory = #{search} and uid = #{uid}; 
+	
+	</select> 
+	
+ <insert id="createBoardLike"  parameterType="LikedVO">
+           INSERT INTO liked (articleNO, uid)
+           VALUES (#{articleNO}, #{uid})
+       </insert>
+
+       <delete id="deleteBoardLike" parameterType="LikedVO">
+           DELETE FROM liked
+           WHERE articleNO = #{articleNO} AND uid = #{uid}
+       </delete>
+
+       <select id="updateBoardLike" parameterType="LikedVO">
+           UPDATE board
+           SET 
+           likecount = (SELECT COUNT(*)
+           FROM liked
+           WHERE articleNO = #{articleNO})
+           WHERE articleNO = #{articleNO}
+       </select>
+
+       <select id="getBoardLike" resultType="int">
+           SELECT COUNT(likedId) FROM liked WHERE articleNO = #{articleNO} AND uid = #{uid}
+       </select>
+       
+       <!--카테고리별 커뮤니티 내가 쓴 댓글-->
+	<select id="myCommentList" resultMap="boardCommentResult">
+	
+		select * from boardcomment where uid = #{uid} order by regDate DESC limit #{skip}, #{amount};
+	
+	</select>
+	
+	<!-- 내가 쓴 댓글 전체 수 -->
+	<select id="totalCommentPage" resultType="int">
+	
+		select count(*) from boardcomment where uid = #{uid};
+	
+	</select>
+	
+
+	<!-- 댓글 삭제 -->
+	<delete id="removecomment">
+		<![CDATA[
+			delete from boardcomment
+			where
+			uid=#{uid} and commentNo=#{commentNo}
+		]]>
+	</delete>
+	
+	 <update id="updateUCommentCnt" parameterType="int">
+    	update board set commentCnt = commentCnt+1
+    	where articleNO = #{articleNO}
+    </update>
+    
+    <update id="updateDCommentCnt" parameterType="int">
+    	update board set commentCnt = commentCnt-1
+    	where articleNO = #{articleNO}
+    </update>
+</mapper>

@@ -1,0 +1,67 @@
+
+.contents h2{
+	margin:10px;
+	margin-right: 500px;
+	text-align: center;
+    margin-left: 550px;
+    font-size: 24px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+    
+
+.goodsList_tit {
+    margin-left: 500px;
+}
+
+.goodsList_tit input{
+	width:100px;
+	height:30px;
+	margin-bottom: 10px;
+	margin-left: 400px;
+	
+}
+.room_wrap {
+    margin-right: 40px;
+}
+
+.rooms{
+ 	    display: flex;    
+ 	    width: 1380px;
+ 	    height:200px;
+ 	  	border:1px solid #fff;
+ 	   	padding:20px;
+ 	    background-color:whitesmoke;
+ 	    border-radius: 10px;
+}
+
+.room_img_wrap img{
+	width:200px;
+	height:200px;
+	border-radius: 10px;	
+}
+
+.room_name{
+	
+	width: 650px;
+}
+
+.room_goodsCount{
+	width: 100px;
+}
+.room_price{
+	width:150px;
+}
+
+.goods_button_wrap{
+	margin-left: 10px;
+	
+}
+.goodsInfo_txt{
+	padding: 0px 40px;
+}
+
+.search {
+    margin-top: 20px;
+    margin-left: 120px;
+}

@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+      PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.goods.dao.GoodsDAO">
+	<resultMap id="goodsResult" type="goodsVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsCount" column="goodsCount" />
+		<result property="goodsMainCategory" column="goodsMainCategory" />
+		<result property="goodsInfo" column="goodsInfo" />
+	    <result property="productPhoto" column="productPhoto" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+		<collection property="lodgingDetailVO" resultMap="lodgingResult" />
+	</resultMap>
+	
+	<resultMap id="lodgingResult" type="lodgingdetailVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="numOfTourist" column="numOfTourist" />
+		<result property="TV" column="TV" />
+		<result property="wifi" column="wifi" />
+		<result property="refrigerator" column="refrigerator" />
+		<result property="checkIn" column="checkIn" />
+		<result property="checkOut" column="checkOut" />
+	    <result property="bedAmount" column="bedAmount" />
+		<result property="airConditioner" column="airConditioner" />
+		<result property="swimmingPool" column="swimmingPool" />
+		<result property="breakfast" column="breakfast" />
+		<result property="spar" column="spar" />
+		<result property="hairAppliance" column="hairAppliance" />
+		<result property="petsAllowed" column="petsAllowed" />
+		<result property="store" column="store" />
+	    <result property="disabledAccessibility" column="disabledAccessibility" />
+		<result property="parking" column="parking" />
+		<result property="lodgingType" column="lodgingType" />
+		<result property="restaurant" column="restaurant" />
+		<result property="hotSpring" column="hotSpring" />
+		<result property="guide" column="guide" />
+		<result property="goodsStart" column="goodsStart" />
+		<result property="goodsEnd" column="goodsEnd" />
+	</resultMap>
+	
+	<resultMap id="orderResult" type="orderVO">
+		<result property="orderSeqNum" column="orderSeqNum" />
+		<result property="goodsId" column="goodsId" />
+		<result property="uid" column="uid" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsQty" column="goodsQty" />
+		<result property="ordererPhoneNumber" column="ordererPhoneNumber" />
+	    <result property="ordererName" column="ordererName" />
+		<result property="payment" column="payment" />
+		<result property="totalPrice" column="totalPrice" />
+		<result property="creDate" column="creDate" />
+		<result property="couponId" column="couponId" />
+		<result property="userpoint" column="userpoint" />
+		<result property="QA1" column="QA1" />
+		<result property="QA2" column="QA2" />
+	    <result property="QA3" column="QA3" />
+		<result property="orderStart" column="orderStart" />
+		<result property="orderEnd" column="orderEnd" />
+	</resultMap>
+	
+	
+	<resultMap id="TouristResult" type="touristVO">
+		<result property="touristNum" column="touristNum" />
+		<result property="ordersNO" column="ordersNO" />
+		<result property="touristName" column="touristName" />
+		<result property="touristGender" column="touristGender" />
+		<result property="touristPhoneNumber" column="touristPhoneNumber" />
+		<result property="touristBirth" column="touristBirth" />
+	</resultMap> 
+	
+		<resultMap id="reviewResult" type="goodreviewVO">
+		<result property="reviewId" column="reviewId" />
+		<result property="uid" column="uid" />
+		<result property="goodsId" column="goodsId" />
+		<result property="content" column="content" />
+		<result property="score" column="score" />
+		<result property="regDate" column="regDate" />
+		<result property="userName" column="userName" />
+		<result property="goodsName" column="goodsName" />
+		<result property="sscore" column="sscore" />
+	</resultMap> 
+	
+	<!-- 상품 리스트  -->
+	<select id="selectGoodsList" resultMap="goodsResult" parameterType="java.util.Map">
+	<![CDATA[
+	
+			SELECT * FROM goods AS g 
+			JOIN lodgingdetail AS l ON g.goodsId = l.goodsId WHERE g.uid = #{uid}		
+	]]>
+	</select>
+	
+	<select id="selectGoodsList1" resultMap="goodsResult" parameterType="java.util.Map">
+	<![CDATA[
+	
+			SELECT * FROM goods AS g 
+			JOIN ticketdetail AS t ON g.goodsId = t.goodsId WHERE g.uid = #{uid}		
+	]]>
+	</select>
+	
+		<select id="adminGoodsList" resultMap="goodsResult" parameterType="java.util.Map">
+	<![CDATA[
+		select * from goods;
+	]]>
+	</select>
+	
+	
+	<!-- 상품 삭제  -->
+	<select id="deleteGoods" resultType="int">
+	<![CDATA[
+			delete from goods
+			where 
+			goodsId= #{goodsId}			
+	]]>
+	</select>
+	
+	<!-- 상품 수정  -->
+	
+		<select id="selectGoodsModify" resultMap="goodsResult" parameterType="goodsVO">
+	<![CDATA[
+	
+			SELECT * FROM goods AS g 
+			JOIN lodgingdetail AS l ON g.goodsId = l.goodsId
+			WHERE g.goodsId = #{goodsId}
+	]]>
+	</select>
+	
+	<update id="updateGoodsModify">
+	<![CDATA[
+	UPDATE goods SET goodsMainCategory = #{goodsMainCategory}, goodsInfo = #{goodsInfo}, goodsPrice = #{goodsPrice}, goodsName = #{goodsName}
+	
+		]]>
+		<where>
+    		  <if test="goodsImageFileName != '' and goodsImageFileName != null">
+	           , goodsImageFileName = #{goodsImageFileName} 
+	         </if>   
+	         and goodsId = #{goodsId}
+      </where>
+	</update>
+	
+	<update id="updateLodgingModify">
+	<![CDATA[
+	UPDATE lodgingdetail SET goodsStart = #{goodsStart}, goodsEnd = #{goodsEnd}, goodsSubCategory = #{goodsSubCategory}, numOfTourist = #{numOfTourist}, bedAmount = #{bedAmount},
+	  checkIn = #{checkIn}, checkOut = #{checkOut}, singleBed = #{singleBed},  doubleBed = #{doubleBed}, twinBed = #{twinBed}, ondol = #{ondol}, swimmingPool = #{swimmingPool},
+	   restaurant = #{restaurant}, parking = #{parking}, hotSpring = #{hotSpring}, spar = #{spar}, wifi = #{wifi}, TV = #{TV}, airConditioner = #{airConditioner},
+	    refrigerator = #{refrigerator}, hairAppliance = #{hairAppliance}, petsAllowed = #{petsAllowed}, breakfast = #{breakfast}, store = #{store}, disabledAccessibility = #{disabledAccessibility}
+	    WHERE goodsId = #{goodsId}
+		]]>
+	</update>
+	
+	<!-- 상품 수정 끝 -->
+		
+	
+		
+	<!--리뷰 관련 시작 -->
+	<insert id="insertReview" parameterType="goodreviewVO">
+		<![CDATA[
+			insert into goodreview(uid, goodsId, content, score, userName)
+			values(#{uid}, #{goodsId}, #{content}, #{score}, #{userName})
+		]]>
+	</insert>
+	
+		<select id="userReviewCheck" resultType="String">
+		<![CDATA[
+			select uid
+			from orders
+			where uid=#{uid} 
+			LIMIT 1;
+		]]>
+	</select>
+	
+ 	<update id="updateReviewScore1">
+	<![CDATA[
+		 UPDATE goods SET score = (score + #{score})/2
+ 		WHERE goodsId = #{goodsId}
+ 		
+		]]>
+	</update>
+	
+	
+	<update id="updateReviewUserScore">
+	<![CDATA[
+		UPDATE user AS u SET score = (SELECT AVG(r.score) over() AS sscore FROM goods AS g 
+			right OUTER JOIN goodreview AS r ON g.goodsId = r.goodsId 
+		WHERE g.uid = #{buid}
+		LIMIT 1) 
+		WHERE u.uid = #{buid}
+		LIMIT 1;
+		]]>
+	</update>
+	
+<!-- 	<select id="userReviewCheck1" resultType="int" parameterType="java.util.Map">
+		<![CDATA[
+			select goodsId
+			from orders
+			where uid=#{uid} and goodsId = #{goodsId}
+			LIMIT 1;
+		]]>
+	</select> -->
+	
+	
+	<select id="userReviewCheck1" resultType="int" parameterType="java.util.Map">
+		<![CDATA[
+		select goodsId From (SELECT o.uid, og.goodsId
+		FROM orders AS o join ordersgoods AS og
+		ON o.ordersNO = og.ordersNO) ad where ad.uid = #{uid} And goodsId = #{goodsId}
+		LIMIT 1;
+		]]>
+	</select>
+	<!--리뷰 관련 끝 -->
+
+	
+	<insert id="insertGoods" parameterType="java.util.Map">
+		<![CDATA[
+			insert into goods(goodsId, uid, goodsName, goodsPrice, goodsMainCategory,  goodsInfo, goodsImageFileName, companyName, goodsCount)
+			values(#{goodsId}, #{uid}, #{goodsName}, #{goodsPrice}, #{goodsMainCategory}, #{goodsInfo}, #{goodsImageFileName}, #{companyName}, #{goodsCount})
+		]]>
+	</insert>
+	
+	<insert id="insertlodgingdetail" parameterType="lodgingdetailVO">
+		<![CDATA[
+			insert into lodgingdetail(goodsId, lodgingType, numOfTourist, checkIn, checkOut, bedAmount, swimmingPool, parking, spar, wifi, TV, airConditioner, refrigerator, restaurant, hotSpring, breakfast, hairAppliance, petsAllowed, store, disabledAccessibility, goodsStart, goodsEnd, goodsSubCategory, singleBed, doubleBed, twinBed, ondol)
+			values(#{goodsId}, #{lodgingType}, #{numOfTourist}, #{checkIn}, #{checkOut}, #{bedAmount}, #{swimmingPool}, #{parking}, #{spar}, #{wifi}, #{TV}, #{airConditioner}, #{refrigerator}, #{restaurant}, #{hotSpring}, #{breakfast}, #{hairAppliance}, #{petsAllowed}, #{store}, #{disabledAccessibility}, #{goodsStart}, #{goodsEnd}, #{goodsSubCategory}, #{singleBed}, #{doubleBed}, #{twinBed}, #{ondol})
+		]]>
+	</insert>
+	
+	<insert id="insertOrder" parameterType="orderVO">
+		<![CDATA[
+			insert into orders(orderSeqNum, goodsId, uid, ordererName, ordererPhoneNumber, QA1, QA2, QA3)
+			values(#{orderSeqNum}, #{goodsId}, #{uid}, #{ordererName}, #{ordererPhoneNumber}, #{QA1}, #{QA2}, #{QA3})
+		]]>
+	</insert> 
+	
+	<insert id="insertTourist" parameterType="TouristVO">
+		insert into touristinfo(touristNum, ordersNO, touristName, touristGender, touristPhoneNumber, touristBirth)
+		values(#{touristNum}, #{ordersNO}, #{touristName}, #{touristGender}, #{touristPhoneNumber}, #{touristBirth})
+	</insert>
+	
+	<insert id="insertImageFileList" parameterType="java.util.Map">
+		INSERT INTO goodimagefiles(goodsId, orginFileName)
+		VALUES
+		<foreach item="item" collection="list"  separator=", " >
+			(#{item.goodsId}, #{item.orginFileName})
+		</foreach>
+	</insert>
+	
+	<insert id="insertticketdetail" parameterType="lodgingdetailVO">
+		insert into ticketdetail(goodsId, guide, goodsSubCategory, goodsStart, goodsEnd)
+		values(#{goodsId}, #{guide}, #{goodsSubCategory}, #{goodsStart}, #{goodsEnd})
+	</insert>
+	
+	<!-- 상품정보 -->
+	<select id="getGoodsInfo" resultType="GoodsVO">
+	<![CDATA[
+	
+	select * from goods WHERE goodsId = #{goodsId};
+	
+	]]>
+	
+	</select>
+
+	<select id="selectGoodsImgs" resultType="imageVO" parameterType="int">
+		<![CDATA[
+		
+		select * from goodimagefiles WHERE goodsId = #{goodsId};
+		
+		]]>
+	
+	</select>
+	
+	
+	<!-- 디테일 정보 가져오기 -->
+	<select id="selectlodgingdetail" resultMap="lodgingResult">
+		<![CDATA[
+		 	select * from lodgingdetail WHERE goodsId = #{goodsId};
+		 ]]>
+	</select>
+	
+		<select id="selectlodgingdetail1" resultMap="lodgingResult">
+		<![CDATA[
+		 	select * from lodgingdetail WHERE goodsId = #{goodsId};
+		 ]]>
+	</select>
+	
+	<!-- 상품 찜 -->
+	<insert id="createGoodsLike"  parameterType="goodsLikeVO">
+         INSERT INTO goodsliked (goodsId, uid)
+         VALUES (#{goodsId}, #{uid})
+     </insert>
+
+	<delete id="deleteGoodsLike" parameterType="goodsLikeVO">
+         DELETE FROM goodsliked
+         WHERE goodsId = #{goodsId} AND uid = #{uid}
+     </delete>
+
+     <select id="updateGoodsLike" parameterType="goodsLikeVO">
+         UPDATE goods
+         SET 
+         likedCnt = (SELECT COUNT(*)
+         	FROM goodsliked
+        	 WHERE goodsId = #{goodsId})
+         WHERE goodsId = #{goodsId}
+     </select>
+     
+     <select id="selectReview" parameterType="int" resultType="int">
+		select count(*)
+		FROM goodreview
+        WHERE goodsId = #{goodsId}
+     </select>
+     
+     <update id="updateReviewScore2">
+		<![CDATA[
+			UPDATE goods SET score = #{score}
+	 		WHERE goodsId = #{goodsId}
+	 		
+			]]>
+	</update>
+	
+	
+	<!-- 사업자 리뷰 업데이트 관련 -->
+<!-- 	 <select id="selectBuserReview" parameterType="int" resultType="int">
+			SELECT u.score FROM user AS u 
+			JOIN goods AS g 
+			WHERE u.uid = g.uid AND g.goodsId = #{goodsId}
+     </select> -->
+     
+<!--           <update id="updateBuserReviewScore1">
+		<![CDATA[
+			 UPDATE user SET score = (score + #{score})/2
+ 			WHERE u.uid = g.uid AND g.goodsId = #{goodsId}
+	 		
+			]]>
+	</update>
+	 -->
+	 
+<!--     <update id="updatebusinessScore">
+		<![CDATA[			 
+			 UPDATE user u, goods g
+			 SET u.score = (u.score + #{score})/2
+			 where u.uid = g.uid and g.goodsId = #{goodsId}	 		
+			]]>
+	</update> -->
+	
+     <update id="updatebusinessScore">
+		<![CDATA[
+			 UPDATE user u, goods g
+			 SET u.score = #{score}
+			 where u.uid = g.uid and g.goodsId = #{goodsId}	 		
+			]]>
+	</update>
+     
+     
+     
+</mapper>

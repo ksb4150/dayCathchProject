@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+.content1s{
+margin: 0 auto;	
+
+}
+
+.userListtable {
+	background-color: #fff;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.userListtable caption {
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+.userListtable tr {
+    border-bottom: 1px solid #eee;
+}
+.userListtable th,
+.userListtable td {
+    padding: 12px;
+    text-align: center; 
+}
+.userListtable tr th {
+    background-color: royalblue;
+    color: #fff;
+}
+.userListtable tr th:first-child {
+    border-radius: 5px 0 0 0;
+}
+
+
+.userListtable {
+width:900px;
+}
+
+.userListtable tr {
+height: 50px;
+}
+
+.userListDiv2 {
+	float:right;
+	margin-top: 25px;
+	text-align: center;
+}
+	
+.paging {
+	margin-top : 30px;
+	text-align: center;
+}	
+	
+ input[type="submit"] {
+    margin-left: 5px;
+}
+
+.usernameform {
+    display: flex;
+}
+
+.search_wrap {
+	width: 200px;
+	margin: auto;
+}
+
+.pageInfo{
+  	list-style : none;
+  	display: inline-block;
+    margin: 0 auto;
+	text-align: center;	
+  }
+  
+.pageInfo li{
+  	float: left;
+    font-size: 20px;
+    margin-left: 18px;
+    padding: 7px;
+    font-weight: 500;
+  }
+  
+ a:link {color:black; text-decoration: none;}
+ a:visited {color:black; text-decoration: none;}
+ a:hover {color:black; text-decoration: underline;}
+  
+  .active{
+  	background-color: #cdd5ec;
+  	}
+  	
+  	
+  	 .comment_title {
+        overflow: hidden;
+        width:400px;
+        height:50px;
+        text-overflow: ellipsis;  
+          
+    }

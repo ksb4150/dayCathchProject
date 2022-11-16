@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/views/common/layout.jsp">
+		<put-attribute name="title" value=""/>
+		<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"/>
+		<put-attribute name="body" value=""/>
+		<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminMain" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminMain.jsp"/>
+	</definition> 
+	
+	<definition name="/admin/adminOrderList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminOrderList.jsp"/>
+	</definition> 
+	
+	<definition name="/admin/adNotice" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adNotice.jsp"/>
+	</definition> 
+	
+	<definition name="/admin/adNoticeView" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adNoticeView.jsp"/>
+	</definition> 
+	
+	<definition name="/admin/adQnaboard" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adQnaboard.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adViewqna" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adViewqna.jsp"/>
+	</definition>
+	
+	<definition name="/admin/buserList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/buserList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/faqWriteForm" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/faqWriteForm.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adFaqList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adFaqList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/modNotice" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/modNotice.jsp"/>
+	</definition>
+	
+	<definition name="/admin/noticeForm" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/noticeForm.jsp"/>
+	</definition>
+	
+	<definition name="/admin/orderList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/orderList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/qnaComment" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/qnaComment.jsp"/>
+	</definition>
+	
+	<definition name="/admin/userList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/userList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminGoodsList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminGoodsList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminGoodsList2" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminGoodsList2.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminReviewList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminReviewList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminCommunityList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminCommunityList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminPointHistory" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminPointHistory.jsp"/>
+	</definition>
+	
+	<definition name="/admin/aSalesStatusPage" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/aSalesStatusPage.jsp"/>
+	</definition>
+	
+	<definition name="/admin/aSalesStatus" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/aSalesStatusPage.jsp"/>
+	</definition>
+	
+	<definition name="/admin/findpointHistory" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminPointHistory.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminGoodsList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminGoodsList.jsp"/>
+	</definition>
+	
+	<definition name="/admin/adminCommentList" extends="baseLayout">
+		<put-attribute name="title" value="productPage" />
+		<put-attribute name="body" value="/WEB-INF/views/admin/adminCommentList.jsp"/>
+	</definition>
+	
+</tiles-definitions>

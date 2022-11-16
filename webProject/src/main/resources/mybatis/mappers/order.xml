@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.order.dao.OrderDAO">
+
+	<resultMap id="cartResult" type="cartVO">
+		<result property="cartId" column="cartId" />
+		<result property="goodsId" column="goodsId" />
+		<result property="uid" column="uid" />
+		<result property="cartcklimit" column="cartcklimit" />
+		<result property="cartckid" column="cartckid" />
+		<result property="goodsQty" column="goodsQty" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="companyName" column="companyName" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+		<result property="cartcheckin" column="cartcheckin"/>
+		<result property="cartcheckout" column="cartcheckout"/>
+		<result property="numOfTourist" column="numOfTourist"/>
+		<result property="creDate" column="creDate" />
+	</resultMap>
+	
+	<resultMap id="OrderPageGoodsResult" type="orderPageGoodsVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="goodsQty" column="goodsQty" />
+		<result property="goodsName" column="goodsName" />
+		<result property="companyName" column="companyName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="totalPrice" column="totalPrice" />
+		<result property="cartcheckin" column="cartcheckin" />
+		<result property="cartcheckout" column="cartcheckout" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+	</resultMap>
+	
+	<resultMap id="OrderGoodsResult" type="orderGoodsVO">
+		<result property="orderGoodsId" column="orderGoodsId" />
+		<result property="ordersNO" column="ordersNO"/>
+		<result property="goodsId" column="goodsId" />
+		<result property="goodsQty" column="goodsQty" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="totalPrice" column="totalPrice" />
+		<result property="cartcheckin" column="cartcheckin" />
+		<result property="cartcheckout" column="cartcheckout" />
+		<result property="numOfTourist" column="numOfTourist" />
+		<result property="orderState" column="orderState" />
+		<collection property="ordercartVO" resultMap="OrdercartResult" />
+	</resultMap>
+	
+	<!-- 오더VO 주문자에 관련된 주문정보들이 담기는곳 EX)총결제액, 쌓일포인트, 사용한포인트, 추가정보입력사항 등  -->
+	<resultMap id="OrdercartResult" type="ordercartVO">
+		<result property="uid" column="uid" />	
+		<result property="ordererName" column="ordererName" />
+		<result property="ordererPhoneNumber" column="ordererPhoneNumber" />
+		<result property="creDate" column="creDate" />
+		<result property="couponId" column="couponId" />
+		<result property="usePoint" column="usePoint" />
+		<result property="QA1" column="QA1" />
+		<result property="QA2" column="QA2" />
+		<result property="QA3" column="QA3" />
+		<result property="savePoint" column="savePoint" />
+		<result property="finalTotalPrice" column="finalTotalPrice" />
+		<result property="orderState" column="orderState" />
+	</resultMap>
+	
+	
+	<resultMap id="goodsResult2" type="goodsVO">
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsCount" column="goodsCount" />
+		<result property="goodsMainCategory" column="goodsMainCategory" />
+		<result property="goodsSubCategory" column="goodsSubCategory" />
+		<result property="goodsInfo" column="goodsInfo" />
+		<result property="companyName" column="companyName" />
+	    <result property="productPhoto" column="productPhoto" />
+		<result property="goodsCompanyInfo" column="goodsCompanyInfo" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+	</resultMap>
+	
+	<resultMap id="selectsbUserToOrder" type="orderGoodsVO">
+		<result property="orderGoodsId" column="ordersGoodsId" />
+		<result property="ordersNO" column="ordersNO" />
+		<result property="goodsId" column="goodsId" />
+		<result property="goodsName" column="goodsName" />
+		<result property="cartcheckin" column="cartcheckin" />
+		<result property="cartcheckout" column="cartcheckout" />
+		<result property="orderState" column="orderState"/>
+		<collection property="ordercartVO" resultMap="OrdercartResult"/>
+	</resultMap>
+	
+	
+	<!-- 주문페이지 이동할때 상품정보들을 가져옴 -->
+	<select id="getGoodsInfo" resultMap="OrderPageGoodsResult" parameterType="orderPageGoodsVO">
+	<![CDATA[
+	select goodsId, goodsName, companyName, goodsImageFileName from goods where goodsId = #{goodsId}
+	]]>
+	</select>
+	
+	
+	<!-- goodsId가 일치하는 주문에 필요한 상품정보 가져옴 -->
+	<select id="getOrderInfo" resultMap="OrderGoodsResult" parameterType="orderGoodsVO">
+	
+		select * from goods where goodsId = #{goodsId}
+	
+	</select>
+	
+	
+	<!-- orderDB에 주문내용 추가 -->
+	<!-- 주문 테이블 등록  -->
+	<insert id="enrollOrder"  parameterType="ordercartVO">
+	
+		insert into orders(ordersNO, orderSeqNum, uid, ordererName, ordererPhoneNumber, couponId, QA1, QA2, QA3, finalTotalPrice, usePoint, savePoint)
+    	values(#{ordersNO}, #{orderSeqNum}, #{uid}, #{ordererName}, #{ordererPhoneNumber}, #{couponId}, #{QA1}, #{QA2}, #{QA3},  #{finalTotalPrice}, #{usePoint}, #{savePoint})
+	</insert>
+	
+	<!-- 주문 상품 테이블 등록 -->
+	<insert id="enrollOrderGoods" parameterType="orderGoodsVO">
+	
+		insert into ordersgoods(ordersNO, goodsId, goodsQty, goodsPrice, goodsName, totalPrice, cartcheckin, cartcheckout, numOfTourist)
+		values(#{ordersNO}, #{goodsId}, #{goodsQty}, #{goodsPrice}, #{goodsName}, #{totalPrice}, #{cartcheckin}, #{cartcheckout}, #{numOfTourist})	
+	</insert>
+	
+	<!-- 고객이 사용한 포인트 db에서 차감 -->
+	<update id="deductPoint">
+	
+		update user set userPoint = #{userPoint} where uid = #{uid}
+		
+	</update>
+	
+	
+	<!-- 주문 재고 차감 -->
+	<update id="deductStock">
+	
+		update goods set goodsCount = #{goodsCount} where goodsId = #{goodsId}
+	
+	</update>
+
+
+<!-- 포인트 변동이력 추가 -->
+	<insert id="insertPointhis1" parameterType="ordercartVO">
+	
+		insert into pointhis(ordersNO, uid, usePoint, savePoint)
+    	values(#{ordersNO}, #{uid}, #{usePoint}, #{savePoint});
+
+	</insert>
+
+
+<!-- 포인트 변동이력 추가 -->
+	<insert id="insertPointhis2" parameterType="ordercartVO">
+	
+		insert into pointhis(ordersNO, uid, usePoint, savePoint)
+    	values(#{ordersNO}, #{uid}, -1 * #{usePoint}, -1 * #{savePoint});
+
+	</insert>
+
+<!-- 포인트 변동이력 추가 -->
+	<insert id="insertPointhis3" parameterType="ordercartVO">
+	
+		insert into pointhis(ordersNO, uid, usePoint, savePoint)
+    	values(#{ordersNO}, #{uid}, -1 * #{usePoint}, -1 * #{savePoint});
+
+	</insert>
+
+
+	<update id="insertuserPoint">
+	
+		update pointhis set userPoint = #{userPoint} where ordersNO = #{ordersNO}
+
+	</update>
+
+
+	<!-- 주문한 상품 장바구니에서 삭제 -->
+	<delete id="deleteOrderCart">
+	
+		delete from cart where uid = #{uid} and goodsId = #{goodsId}
+	
+	</delete>
+
+
+	<!-- 주문결과페이지에 보낼 정보를 orders 테이블에서 간략하게 가져옴(임시) -->
+	<select id="getOrderResultInfo" resultMap="OrdercartResult" parameterType="ordercartVO">
+	
+		select * from orders where ordersNO = #{ordersNO}
+	
+	</select>
+	
+	<!-- 회원 주문 조회 페이지에 보낼 주문 정보 -->
+	<select id="selectUserOrderList" resultMap="OrdercartResult">
+	
+	<![CDATA[
+		 	select * from orders WHERE uid=#{uid} order by creDate DESC;
+		 ]]>
+	
+	</select>
+	
+	
+	<!-- 회원 주문 조회 페이지에 보낼 주문 상품 정보(페이징) -->
+	<select id="selectUserOrdergoodsList" resultMap="OrderGoodsResult">
+	
+	<![CDATA[
+	 	SELECT *
+		FROM (SELECT og.ordersNO, o.uid, og.goodsId, og.goodsQty, og.goodsPrice, og.goodsName, og.totalPrice, og.cartcheckin, og.cartcheckout, o.ordererName, o.ordererPhoneNumber, o.usePoint, o.savePoint, o.finalTotalPrice, og.orderState ,o.creDate FROM ordersgoods AS og 
+		JOIN orders AS o ON og.ordersNO = o.ordersNO) tbl
+		 WHERE tbl.uid = #{uid} order by creDate DESC limit #{skip}, #{amount};
+	 ]]>
+	
+	</select>
+	
+	
+	<!-- 비회원 단일 주문 조회 페이지에 보낼 주문 정보(리스트형식) -->
+	<select id="selectOrderList" resultMap="OrdercartResult">
+	
+	<![CDATA[
+		 	select * from orders WHERE ordersNO=#{ordersNO} order by creDate DESC;
+		 ]]>
+	
+	</select>
+	
+	<!-- 비회원 주문 조회 페이지에 보낼 주문 상품 정보(리스트형식) -->
+	<select id="selectOrdergoodsList" resultMap="OrderGoodsResult">
+	
+	<![CDATA[
+		 	select * from ordersgoods WHERE ordersNO=#{ordersNO} order by creDate DESC;
+		 ]]>
+	
+	</select>
+						
+	<!-- 주문 취소 관련 -->
+	<!-- 주문상태 결제완료에서 취소대기로 세팅 -->
+	<update id="orderCancle1">
+		update orders set orderState = '취소대기' where ordersNO = #{ordersNO}
+	</update>
+	
+	
+	<update id="orderCancle2">
+		update ordersgoods set orderState = '취소대기' where ordersNO = #{ordersNO}
+	</update>	
+
+
+	<update id="orderCancle3">
+		update ordersgoods set orderState = '취소대기' where ordersNO = #{ordersNO} and goodsId = #{goodsId}
+	</update>
+
+
+	<!-- 특정 주문번호에 해당하는 주문 상품 정보 리스트로 가져다주기(주문 취소) -->
+	<select id="getOrderGoodsInfo" resultMap="OrderGoodsResult">
+	
+		select * from ordersgoods
+		where ordersNO = #{ordersNO}
+	
+	</select>
+	
+	<!-- 특정 주문번호에 해당하는 주문 정보 전부 가져오기(주문 취소) -->
+	<select id="getOrder" resultMap="OrdercartResult">
+	
+		select * from orders
+		where ordersNO = #{ordersNO}
+	
+	</select>
+
+	<!-- 특정 주문번호에 해당하는 단일 주문 상품 정보(주문 취소) -->
+	<select id="getOrderGoodsInfo2" resultMap="OrderGoodsResult">
+	
+		select * from ordersgoods
+		where ordersNO = #{ordersNO} and goodsId = #{goodsId}
+	
+	</select>
+	
+	<!-- 사업자의 주문 된 상품의 예약 내역 보여주기 -->
+	<select id="selectsbUserToOrder" parameterType="java.util.Map" resultMap="selectsbUserToOrder">
+		SELECT tbl.ordersGoodsId, tbl.ordersNO, tbl.goodsId, tbl.goodsName, tbl.numOfTourist, tbl.cartcheckin, tbl.cartcheckout, o.creDate, o.ordererName, o.ordererPhoneNumber, tbl.orderState FROM orders o
+		CROSS JOIN (
+			SELECT og.ordersGoodsId, og.ordersNO, og.goodsId, og.goodsName, og.numOfTourist, og.cartcheckin, og.cartcheckout, og.orderState
+			FROM goods g cross join ordersgoods og 
+			ON g.goodsId = og.goodsId
+			WHERE uid = #{buid}) tbl
+		WHERE tbl.ordersNO = o.ordersNO;
+	</select>
+	
+	<!-- 월별 사업자의 총 매출 -->
+	<select id="totalSales" resultType="orderGoodsVO">
+		<![CDATA[
+			SELECT SUM(og.totalPrice) AS totalPrice, SUM(og.goodsQty) AS goodsQty, date_format(og.creDate, '%Y-%m-%d') AS creDate
+			FROM goods g cross join ordersgoods og 
+			ON g.goodsId = og.goodsId
+			WHERE uid = #{buid} && og.orderState = "결제완료"
+			GROUP BY MONTH(creDate)
+			ORDER BY creDate asc;
+	 	]]>
+	</select>
+	
+	<!-- 아이디별 월 매출 -->
+	<select id="goodsSales" resultType="orderGoodsVO">
+		<![CDATA[
+			SELECT og.goodsId, og.goodsName, SUM(og.totalPrice) AS totalPrice, date_format(og.creDate, '%Y-%m-%d') AS creDate
+			FROM goods g cross join ordersgoods og 
+			ON g.goodsId = og.goodsId
+			WHERE uid = #{buid} && og.orderState = "결제완료"
+			GROUP BY og.goodsId, MONTH(creDate);
+	 	]]>
+	</select>
+	
+	<!-- 회원 주문 조회 페이지에 보낼 주문 상품 정보(페이징) -->
+	<select id="totalOrderGoodsList" resultType="int">
+	
+	<![CDATA[
+		 	SELECT count(*)
+			FROM (SELECT og.ordersNO, o.uid, og.goodsId, og.goodsQty, og.goodsPrice, og.goodsName, og.totalPrice, og.cartcheckin, og.cartcheckout, o.ordererName, o.ordererPhoneNumber, o.usePoint, o.savePoint, o.finalTotalPrice, og.orderState ,o.creDate FROM ordersgoods AS og 
+			JOIN orders AS o ON og.ordersNO = o.ordersNO) tbl
+ 			WHERE tbl.uid = #{uid} order by creDate DESC limit #{skip}, #{amount};
+		 ]]>
+	
+	</select>
+	
+	<!-- 회원이 주문목록에서 특정 주문 검색 -->
+	<select id="FindUserOrderList" resultMap="OrdercartResult">
+	
+		 <![CDATA[
+		select * from orders
+	]]>
+		 	<where>
+		 	
+		 	uid = #{uid} AND ordersNO = #{search} OR orderState = #{search} order by creDate DESC;
+		 	
+		
+			</where>
+	</select>
+	
+	<select id="FindUserOrdergoodsList" resultMap="OrderGoodsResult">
+	
+	<![CDATA[
+		SELECT *
+		FROM (SELECT og.ordersNO, o.uid, og.goodsId, og.goodsQty, og.goodsPrice, og.goodsName, og.totalPrice, og.cartcheckin, og.cartcheckout, o.ordererName, o.ordererPhoneNumber, o.usePoint, o.savePoint, o.finalTotalPrice, og.orderState ,o.creDate FROM ordersgoods AS og 
+		JOIN orders AS o ON og.ordersNO = o.ordersNO) tbl
+		]]>
+		
+ 		<where>
+ 		
+ 		tbl.uid = #{uid} and ordersNO = #{search} OR orderState = #{search} order by creDate DESC;
+ 		
+		</where> 
+
+	</select>
+
+	<select id="selectOrderToTouristInfo" parameterType="int" resultType="touristVO">
+		SELECT *
+		FROM touristinfo
+		WHERE ordersNO = #{orderNO};
+	</select>
+	
+</mapper>

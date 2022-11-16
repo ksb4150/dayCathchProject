@@ -1,0 +1,128 @@
+
+#mainWrapper h3{
+	
+    text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+#mainWrapper ul{ 
+	
+	list-style:none;
+    text-align:center;
+    font-size: 17px;
+    padding-bottom: 18px;
+    padding:0px;
+    margin:0;
+}
+
+#mainWrapper{
+	width: 800px;
+	margin:auto; /*가운데 정렬*/
+    padding: 0;
+}
+
+#mainWrapper > ul > li:first-child {
+	text-align: center;
+	font-size:15pt;
+	height:30px;
+	vertical-align:middle;
+	line-height:30px;
+    padding-top: 10px;
+    padding-bottom: 13px;
+}
+
+#ulTable {
+    margin-top:6px;
+   
+}
+
+
+#ulTable > li:first-child > ul > li {
+	background-color:#ffffff;
+	font-weight:400;
+    font-size:15px;
+	text-align:center;
+    
+}
+
+#ulTable > li > ul {
+	clear:both;
+	padding:0px auto;
+	position:relative;
+	min-width:40px;
+    margin-bottom:2px;
+}
+
+#ulTable > li > ul > li { 
+	float:left;
+	font-size:14px;
+    text-align: center;
+    margin-bottom:10px;
+    border-bottom:1px solid silver;
+    height: 40px;
+    line-height: 40px;
+}    
+
+    #ulTable > li > ul > li:first-child           	{width:20%;} /*No 열 크기*/
+    #ulTable > li > ul > li:first-child +li       	{width:50%;} /*제목 열 크기*/
+    #ulTable > li > ul > li:first-child +li+li    	{width:30%;} /*작성일 열 크기*/
+   
+   
+
+#divPaging {
+	clear:both; 
+	margin:0 auto; 
+	width:220px; 
+	height:50px;
+}
+
+#divPaging > div {
+    float:left;
+    width: 30px;
+    margin:0 auto;
+    text-align:center;
+    margin-top: 50px;
+    cursor: pointer;
+    overflow: visible;
+ }
+
+#liSearchOption {clear:both;}
+#liSearchOption > div {
+    margin:0 auto; 
+    margin-top: 30px; 
+    width:auto; 
+    height:100px; 
+}
+
+.left {
+	text-align : left;
+    font-size:15px;
+    cursor: pointer;
+
+}
+
+
+
+.pageInfo{
+  	list-style : none;
+  	display: inline-block;
+    margin: 50px 0 0 100px;  	
+  }
+ .pageInfo li{
+  	float: left;
+    font-size: 20px;
+    margin-left: 18px;
+    padding: 7px;
+    font-weight: 500;
+  }
+  
+ a:link {color:black; text-decoration: none;}
+ a:visited {color:black; text-decoration: none;}
+ a:hover {color:black; text-decoration: underline;}
+  
+ .active{
+  	background-color: #cdd5ec;
+  }

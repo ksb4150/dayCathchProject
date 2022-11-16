@@ -1,0 +1,209 @@
+.contents_area {
+	width: 1200px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.productName {
+	display: flex;
+	align-items: center;
+	justify-items: center;
+}
+
+.text_area {
+	width: 700px;
+	display: flex;
+	float: left;
+	font-size: 30px;
+	margin-right: 50px;
+}
+
+#form1 {
+	margin-top: 10px;
+}
+
+.step {
+	width: 370px;
+	display: flex;
+	list-style: none;
+	float: right;
+	font-size: 20px;
+	margin-left: 40px;
+}
+
+.step li {
+	margin-right: 30px;
+}
+
+.step .num {
+	position: relative;
+	left: 30px;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #ccc;
+	color: #fff;
+}
+
+.step .active {
+	position: relative;
+	left: 30px;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #000;
+	color: #fff;
+}
+
+.productDetail {
+	display: flex;
+}
+
+.main_thumbnail {
+	width: 750px;
+	margin-right: 80px;
+}
+
+.main_thumbnail a img {
+	border-radius: 20px;
+}
+
+.paymentPage_contents_item {
+	width: 400px;
+	margin-top: 60px;
+	font-size: 15px;
+}
+
+.hotel_name {
+	font-size: 30px;
+}
+
+.name2 {
+	color: gray;
+	font-size: 20px;
+}
+
+.option_list {
+	font-size: 20px;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	line-height: 35px;
+}
+
+.option_list img{
+	width:22px;
+	height:22px;
+}
+
+.Reservation_info {
+	width: 300px;
+	height: 300px;
+
+	background-color: white;
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.traveler_info_paymentPage {
+	width: 100%;
+	background-color: whitesmoke;
+	border-radius: 10px;
+	padding: 30px 0px;
+}
+
+.traveler_info {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.row_list {
+	margin-right: 10px;
+}
+
+.row_item {
+	width: 400px;
+	display: flex;
+	margin: 20px;
+}
+
+.input_line input {
+	margin-left: 10px;
+	width: 200px;
+	height: 30px;
+}
+
+.aside_refund {
+	width: 500px;
+	height: 300px;
+	background-color: white;
+
+	border-radius: 20px;
+	padding: 10px;
+}
+
+.aside_payment {
+	width: 300px;
+	height: 500px;
+	text-align: center;
+}
+
+.row_form ul {
+	list-style: none;
+	display: flex;
+	margin: auto;
+}
+
+.paymentPage_options {
+	color: grey;
+}
+
+.payment_Page_name {
+	color: orange;
+}
+
+.if_you_cancel {
+	background-color: rgb(255, 113, 61);
+	color: white;
+}
+
+.paymentbutton {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #007ac9;
+
+	color: white;
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.paymentbutton:active, .paymentbutton:hover, .paymentbutton:focus {
+	background:  orange;
+
+}
+
+.paymentbutton:disabled {
+	opacity: 0.5;
+}
+
+.paymentPage_totalpay {
+	color: orange;
+	
+}

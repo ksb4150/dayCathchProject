@@ -1,0 +1,24 @@
+	#label_info{
+		line-height: 30px;
+		background-color: whitesmoke;
+		padding: 10px;
+		border-radius: 10px;
+	}
+	  	
+  .labels {
+		width: 400px;
+		display: inline-block;
+		margin: auto;
+		border-bottom: 1px solid #fff;
+		padding-left: 20px;
+	}
+
+	.flex_box {
+		display: flex;
+		margin-bottom: 20px;
+	}
+	
+	.flex_box div {
+		margin: auto;
+		padding : 0px;
+	}

@@ -1,0 +1,105 @@
+.footer_nav {
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+
+}
+.footer_div1 {
+  	background-color: #fff;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.footer_div2 {
+    margin: 20px;
+
+}
+
+.footer_nav_ul {
+    list-style-type: none;
+    padding: 0px;
+    list-style: none;
+}
+
+.footer_a, .footer_b{
+    text-decoration: none;  
+}
+
+.footer_a:link {
+    color:rgb(37, 37, 37);
+ }
+
+ .footer_a:visited {
+    color:rgb(37, 37, 37);
+  }
+
+  .footer_a:link {
+    color:rgb(37, 37, 37);
+ }
+
+ .footer_a:visited {
+    color:rgb(37, 37, 37);
+  }
+
+  .dropdown{
+    margin: 20px
+  }
+  
+  .dropbtn{
+    background-color: white;
+    border: 0px;
+    color : rgb(37, 37, 37);
+    cursor : pointer;
+    font-size : 17px;
+  }
+  .dropdown-content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    background-color: white; 
+    width : 200px;
+    color: rgb(37, 37, 37);
+  }
+  
+  .dropdown-content a{
+    display : block;
+    text-decoration : none;
+    color : rgb(37, 37, 37);
+    font-size: 12px;
+    padding : 12px 20px;
+  }
+  .dropdown-content a:hover{
+    background-color : #f9f9f9;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .footer {
+    width: 1200; 
+    margin: auto;
+    text-align: center;
+  }
+  .footer_b {
+    color: rgba(0, 0, 0, 0.685);
+  }
+
+.footer_b:link {
+    color:rgba(0, 0, 0, 0.685);
+ }
+
+ .footer_b:visited {
+    color:rgba(0, 0, 0, 0.685);
+  }
+
+  .footer_b:link {
+    color:rgba(0, 0, 0, 0.685);
+ }
+
+ .footer_b:visited {
+    color:rgba(0, 0, 0, 0.685);
+  }

@@ -1,0 +1,183 @@
+.contents_area{
+    width: 100%;
+   
+}
+.soon{
+    width:900px;
+    display:flex;
+    margin: auto;
+    justify-content: center;    
+    
+}
+
+.logo{
+margin-bottom: 20px;
+margin-top:50px ;
+}
+
+
+
+.login_form h1{
+    font-size: 32px; color: #000;
+    text-align: center;
+   
+}
+
+.int_area{
+    display:flex;
+    justify-content: center;   
+  
+}
+
+.int_area input{
+    width: 500px;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    display:flex;
+    justify-content: center;   
+    border: 1px solid #999;
+    font-size: 18px; color: #999;
+    outline: none;
+    
+}
+.int_area label{
+    position: absolute; left: 10px; top:15px;
+    font-size: 18px; color: #999;
+}
+
+.btn_area{
+   padding-top: 20px;
+   margin-bottom: 10px;
+   display:flex;
+   justify-content: center;   
+    
+}
+.btn_submit{
+    
+    height: 60px;
+    width: 522px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #007ac9;
+    border: none;
+    cursor: pointer;
+}
+
+.list_bar li{
+    display: inline;
+    font-size: 15px;
+    color: #555;
+    padding: 0;
+    box-sizing: border-box;
+    margin-left: 32px;
+   
+}
+
+.list_bar li a{
+    text-decoration: none;
+    color: #000;
+         
+}
+ .tit_list{
+    font-size: 17px;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    
+}
+
+.list_id{
+   font-size: 15px;
+   color: #555;
+   margin: 0;
+   padding: 0;
+   font-weight: normal;
+    list-style: none;
+   box-sizing: border-box;
+  
+
+}
+
+#naverIdLogin{
+	 list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-weight: normal;
+    text-indent: 0;
+    font-size: 15px;
+    color: #222;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-left: 190px;
+    margin-top: 10px;
+    
+}
+
+
+.btn_naver{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    font-weight: normal;
+    text-indent: 0;
+    font-size: 15px;
+    color: #222;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url(/img/ico_sns_login.png) no-repeat 0 -40px;
+    background-size: 40px auto;
+    float: left;
+    margin-left: 190px;
+    margin-top: 10px;
+    
+
+}
+
+.btn_kakao{
+    word-break: break-word;
+    -webkit-text-size-adjust: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    border: 0 none;
+    font-weight: normal;    
+    text-indent: 0;
+    font-size: 15px;
+    color: #222;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url(/img/ico_sns_login.png) no-repeat 0 0;
+    background-size: 40px auto;
+    margin-left: 50px;
+    margin-top: 10px;
+
+}
+
+.btn_m{
+ 
+    justify-content: center;   
+    height: 60px;
+    width: 522px;
+    font-size: 20px;
+    color: #000;
+    background-color: #ffd21b;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+ 
+.list_nj{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    list-style-type: none;
+}

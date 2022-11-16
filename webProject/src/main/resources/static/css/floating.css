@@ -1,0 +1,32 @@
+#floatMenu {
+   
+   position:fixed;
+   bottom:105px;
+     right:37px;
+}
+
+.upbutton_a {
+   text-decoration: none;
+   color: gray;
+   
+}
+.upbutton_a :link {
+   color: gray
+}
+
+
+.floatcover {
+   width: 48px;
+   height: 48px;   
+   display: flex;
+    align-items: center;
+    font-size:medium;
+}
+
+.floatcover img{
+   width: 60px;
+   height: 60px;
+   background-color: whitesmoke;
+   border: 2px solid aliceblue;
+   border-radius: 90px;
+}

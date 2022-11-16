@@ -1,0 +1,716 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.page.dao.PageDAO">
+	<resultMap id="goodsPage" type="goodsVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="uid" column="uid" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsMainCategory" column="goodsMainCategory" />
+		<result property="goodsSubCategory" column="goodsSubCategory" />
+	</resultMap>
+	
+	<resultMap id="boardResult" type="boardVO">
+		<result property="articleNO" column="articleNO" />
+		<result property="uid" column="uid" />
+		<result property="title" column="title" />
+		<result property="content" column="content" />
+		<result property="userName" column="userName" />
+		<result property="viewCnt" column="viewCnt" />
+		<result property="commentCnt" column="commentCnt" />
+		<result property="articleCategory" column="articleCategory" />
+		<result property="writeDate" column="writeDate" />
+		<result property="addressList" column="addressList" />
+		<result property="mainImageFileName" column="mainImageFileName" />
+	</resultMap>
+	
+	<resultMap id="imgResult" type="imageVO">
+		<result property="imageFileNO" column="imageFileNO" />
+		<result property="goodsId" column="goodsId" />
+		<result property="imageFileName" column="imageFileName" />
+	</resultMap>
+	
+	<resultMap id="goodsPageUser" type="memberVO">
+		<result property="uid" column="uid" />
+		<result property="companyName" column="companyName" />
+		<result property="userPhoneNumber" column="userPhoneNumber" />
+		<result property="userImageFileName" column="userImageFileName" />
+	</resultMap>
+
+<!-- 서브 페이지 숙소 상품 -->
+<select id="selectLowLodgingList" resultMap="goodsPage">
+		<![CDATA[
+			SELECT uid, goodsId, goodsName, min(goodsPrice) AS goodsPrice, score FROM goods
+			WHERE goodsMainCategory = "숙박" and adminAllow > 0
+			GROUP BY uid
+			order BY goodsPrice ASC
+		
+	
+		]]>
+	</select>
+	
+	<select id="selectHotRowLodgingList" resultMap="goodsPage">
+		<![CDATA[
+			SELECT uid, goodsId, goodsName, max(score) AS score, goodsPrice FROM goods
+			WHERE goodsMainCategory = "숙박" and adminAllow > 0
+			GROUP BY uid
+			order BY score DESC
+		]]>
+	</select>
+
+	
+	<select id="selectMemberList" resultMap="goodsPageUser" parameterType="memberVO">
+		<![CDATA[
+			SELECT *
+			from user
+			where uid = #{uid}
+		]]>
+	</select>
+	
+	<select id="selectMemInfo" parameterType="String" resultType="memberVO">
+		<![CDATA[
+			SELECT *
+			from user
+			where uid = #{uid}
+		]]>
+	</select>
+	
+	<!-- 메인 페이지 숙소 상품 -->
+	<select id="selectLowLodgingList1" resultMap="goodsPage">
+		<![CDATA[
+			SELECT uid, goodsId, goodsName, min(goodsPrice) AS goodsPrice, score FROM goods
+			WHERE goodsMainCategory = "숙박" and adminAllow > 0
+			GROUP BY uid
+			order BY goodsPrice ASC 
+			LIMIT 3;
+		]]>
+	</select>
+	
+		<!-- 메인 페이지 티켓 상품 -->
+	<select id="selectLowLodgingList3" resultMap="goodsPage">
+		<![CDATA[
+			SELECT uid, goodsId, goodsName, min(goodsPrice) AS goodsPrice, score FROM goods
+			WHERE goodsMainCategory = "투어티켓" AND adminAllow > 0
+			GROUP BY uid
+			order BY goodsPrice ASC 
+			LIMIT 3;
+		]]>
+	</select>
+	
+			<!--메인 페이지 게시글 -->
+	<select id="selectboardList" resultType="boardVO">
+		<![CDATA[
+			SELECT * FROM board
+			GROUP BY articleCategory
+			order BY viewCnt DESC 
+			LIMIT 3;
+		]]>
+	</select>
+	
+	<!-- 서브 페이지 투어티켓 상품 -->
+	<select id="selectLowLodgingList2" resultMap="goodsPage">
+		<![CDATA[
+				SELECT uid, goodsId, goodsName, min(goodsPrice) AS goodsPrice, score FROM goods
+			WHERE goodsMainCategory = "투어티켓" and adminAllow > 0
+			GROUP BY uid
+			order BY goodsPrice ASC
+		
+		]]>
+	</select>
+	
+	<select id="selectHotRowLodgingList2" resultMap="goodsPage">
+		<![CDATA[
+			SELECT uid, goodsId, goodsName, max(score) AS score, goodsPrice FROM goods
+			WHERE goodsMainCategory = "투어티켓" and adminAllow > 0
+			GROUP BY uid
+			order BY score DESC
+		]]>
+	</select>
+	
+	<select id="selectGoods" parameterType="String" resultType="goodsVO">
+		<![CDATA[
+			SELECT * from goods
+			where uid = #{uid} && adminAllow > 0 and goodsMainCategory = "숙박"
+		]]>
+	</select>
+	
+	<select id="selectGoods1" parameterType="String" resultType="goodsVO">
+		<![CDATA[
+			SELECT * from goods
+			where uid = #{uid} && adminAllow > 0 and goodsMainCategory = "투어티켓"
+		]]>
+	</select>
+	
+	<select id="selectlodgingDetail" parameterType="int" resultType="lodgingdetailVO">
+		<![CDATA[
+			SELECT * from lodgingdetail
+			where goodsId = #{goodsId}
+		]]>
+	</select>
+	
+	<select id="selectlodgingImgs" parameterType="int" resultType="imageVO">
+		<![CDATA[
+			SELECT * from goodimagefiles
+			where goodsId = #{goodsId}
+		]]>
+	</select>
+	
+	<select id="selectGood" parameterType="int" resultType="goodsVO">
+		<![CDATA[
+			SELECT * from goods
+			where goodsId = #{goodsId} 
+		]]>
+	</select>
+	
+	
+		<!-- 리뷰 리스트 가져오기 -->
+	<select id="selectReviewList" parameterType="String" resultType="goodreviewVO">
+		<![CDATA[
+			SELECT g.uid, g.goodsName, r.content, r.goodsId, r.userName, r.regDate, r.score, AVG(r.score) over() AS sscore FROM goods AS g 
+			right OUTER JOIN goodreview AS r ON g.goodsId = r.goodsId WHERE g.uid = #{uid}
+			
+			order BY r.regDate DESC			
+			LIMIT 7;
+		]]>
+	</select>
+	
+	<!-- 1:1문의  -->
+	<insert id="addNewQna" parameterType="csVO">
+		<![CDATA[
+			insert into cs(uid, csNO, csCategory, userPhoneNumber, title, writer, txtContent, ordersNO)
+			values(#{uid}, #{csNO}, #{csCategory}, #{userPhoneNumber}, #{title}, #{writer}, #{txtContent}, #{ordersNO})
+		]]>
+	</insert>
+	
+	<select id="getQnaList"  parameterType="String" resultType="csVO" >
+		<![CDATA[
+		
+		SELECT *	
+		FROM cs c2
+		INNER JOIN (select csNO from cs 
+						where uid= #{uid}) c1
+		ON c1.csNO = c2.csNO OR c1.csNO = c2.originNo
+		order by originNo desc, groupOrd asc, groupLayer asc, writeDate DESC;
+			
+		]]>
+	</select>
+	
+	
+	<select id="detailQna" resultType="csVO" >
+	<![CDATA[
+			SELECT csNO, writer, title, txtContent, writeDate, originNo, groupLayer
+			from cs 
+			where csNO= #{csNO}
+		]]>
+	</select>
+	
+	<delete id="deleteQna" parameterType="int">
+    <![CDATA[
+      DELETE FROM cs WHERE csNO = #{csNO} 
+	   ]]>
+	</delete>
+	
+	<update id="modQna" >
+	<![CDATA[	
+		update cs 
+		set title = #{title}, txtContent = #{txtContent}
+		where csNO = #{csNO}
+		]]>	
+	</update>
+	
+	<!-- 답글 -->
+	
+	<!-- 그룹번호 조회 -->
+	<select id="readOriginNo" resultType="int">
+		select originNo
+		from cs
+		where csNO=#{csNO}
+	</select>
+	
+	<!-- 계층 정보 조회 -->
+	<select id="readGroupLayer" resultType="int">
+		select groupLayer
+		from cs
+		where csNO=#{csNO}
+	</select>
+	
+	<!-- 순서번호 Max 조회 -->
+	<select id="maxGroupOrd" resultType="int">
+		select max(groupOrd)
+		from cs
+	</select>
+    
+    <!-- 답글 순서 수정 -->
+    <update id="updateOriginNo">
+		update cs
+		set originNo=#{originNo}
+		where csNO=#{csNO}
+	</update>
+    
+    <!-- 글번호 -->
+    <select id="maxCsNO" resultType="int">
+		select max(csNO)
+		from cs
+	</select>
+    
+    <!-- 답글 등록 -->
+    <insert id="insertReply" parameterType="csVO">
+        INSERT INTO cs ( uid, originNo, groupOrd, groupLayer,  title, txtContent, writeDate)
+        			VALUES (#{uid}, #{originNo}, #{groupOrd}, #{groupLayer},  #{title}, #{txtContent}, NOW() )
+  	</insert>
+	
+	<!-- 공지사항 -->
+	<select id="selectAllNoticeList" resultType="noticeVO">
+	 <![CDATA[
+		select noticeNO, title, content, uid, notice_category, regDate, view_cnt
+		from notice
+		order BY regDate DESC	 
+		]]>
+	</select>
+	
+	<!-- 페이징 처리한 목록 -->
+	<select id="listPage" resultType="noticeVO">
+	 <![CDATA[
+		select *
+		from notice
+		order BY noticeNO desc, regDate DESC
+		limit #{skip}, #{amount}	 
+		]]>
+	</select>
+
+	<select id="getTotal" resultType="int">
+	<![CDATA[	
+		select count(*) from notice
+	]]>
+	</select>
+	
+	<insert id="noticeWrite" parameterType="noticeVO" >
+	 <![CDATA[
+		insert into notice(noticeNO, uid, notice_category, title, content )
+		values(#{noticeNO}, #{uid}, #{notice_category}, #{title}, #{content})
+		order by noticeNO desc
+		]]>
+	</insert>
+	
+	<select id="noticeSelect"  resultType="noticeVO" >
+	<![CDATA[
+		select *
+		from notice
+		where noticeNO = #{noticeNO}
+		]]>
+	</select>
+	
+	<update id="noticeUpdate" parameterType="noticeVO">
+		update notice
+		set title = #{title}, 
+			content = #{content}
+		where noticeNO = #{noticeNO}
+	</update>
+	
+	<delete id="noticeDelete" parameterType="int">
+	<![CDATA[
+		DELETE FROM notice WHERE noticeNO= #{noticeNO}
+	 ]]>
+	</delete>
+	
+	<update id="updateView" parameterType="noticeVO">
+	<![CDATA[
+		update notice set
+		view_cnt = view_cnt+1
+		where noticeNO = #{noticeNO}
+	 ]]>
+	</update>
+	
+	
+	<!-- FAQ -->
+	<select id="selectAllFaqList"  parameterType="String" resultType="faqVO">
+	 <![CDATA[
+		select faq_no, faq_title, faq_date, faq_content
+		from faq
+		]]>
+	</select>
+	
+	<insert id="faqWrite"  parameterType="faqVO">
+	 <![CDATA[
+		insert into faq(faq_no, uid, faq_title, faq_content, faq_date)
+		values(#{faq_no}, #{uid}, #{faq_title}, #{faq_content}, #{faq_date})
+		order by noticeNO desc
+		]]>
+	</insert>
+	
+	<select id="faqSelect" resultType="faqVO" >
+	<![CDATA[
+			SELECT faq_no, faq_title, faq_content, faq_date
+			from faq 
+			where faq_no= #{faq_no}
+		]]>
+	</select>
+	
+	<update id="faqUpdate" >
+		<![CDATA[
+		update faq 
+		set faq_title = #{faq_title}, 
+			faq_content = #{faq_content},
+			faq_date = now()
+		where faq_no = #{faq_no}
+		]]>
+	</update>
+	
+	<delete id="faqDelete" parameterType="int">
+		<![CDATA[
+		DELETE FROM faq WHERE faq_no=#{faq_no}
+		]]>
+	</delete>
+	
+	
+	<!-- 아래부터 옛날 프로젝트 sql -->
+	
+	<select id="selectNewArticleNO" resultType="int">
+		<![CDATA[
+			select nvl(max(articleNO),0)+1 from t_board
+		]]>
+	</select>
+	
+	
+	<insert id="insertNewArticle" parameterType="java.util.Map">
+		<![CDATA[
+			insert into t_board(articleNO, parentNO, title, content, imageFileName, id)
+			values(#{articleNO}, #{parentNO}, #{title}, #{content}, #{imageFileName}, #{id})
+		]]>
+	</insert>
+	
+	<!-- 다중 이미지 글 정보 수정하기 -->
+	<update id="updateArticle" parameterType="java.util.Map">
+		update t_board
+		set title=#{title},
+			content=#{content}
+			where articleNO = #{articleNO}
+	</update>
+	
+	<update id="updateImage" parameterType="java.util.Map">
+		<foreach item="item" collection="list">
+				update t_imagefile
+				set imageFileName = #{item.imageFileName}
+				where articleNO = #{item.articleNO}
+		</foreach>		
+ 	</update>
+
+	
+	<select id="oldImageName" resultMap="imgResult" parameterType="int">
+		select *
+		from t_imageFile
+		where articleNO = #{articleNO}
+	</select>
+	
+	
+	<delete id="deleteArticle" parameterType="int">
+		<![CDATA[
+			DELETE FROM t_board WHERE articleNO = #{articleNO} or parentNO = #{parentNO}
+		]]>
+	</delete>
+
+	<insert id="insertNewImage" parameterType="java.util.Map">
+		INSERT INTO t_imageFile(imageFileNO, imageFileName, articleNO)
+		VALUES
+		<foreach item="item" collection="list"  separator=", " >
+			(#{item.imageFileNO}, #{item.imageFileName}, #{item.articleNO})
+		</foreach>
+ 	</insert>
+	
+	<select id="selectNewImageFileNO" resultType="int">
+		<![CDATA[
+			select nvl(max(imageFileNO), 0) from t_imageFile
+		]]>
+	</select>
+	
+	<select id="selectImageFileList" resultMap="imgResult" parameterType="int">
+		<![CDATA[
+			SELECT * from t_imageFile
+			where articleNO = #{articleNO}
+		]]>
+	</select>
+	
+	<select id="selectBoardAsc" resultType="boardVO">
+    	 <![CDATA[
+    	 	SELECT * FROM board
+			GROUP BY articleCategory
+			ORDER BY writeDate
+			LIMIT 3;
+    	 ]]>
+    </select>
+    
+    <select id="selectBoardCnt" resultType="boardVO">
+    	<![CDATA[
+    	 	SELECT * FROM board
+			GROUP BY articleCategory
+			ORDER BY viewCnt desc
+			LIMIT 3;
+    	 ]]>
+    </select>
+   
+    <select id="basicFiltering" parameterType="String" resultType="goodsVO">
+    	<![CDATA[
+		SELECT 	g.goodsId, g.uid, g.goodsName, g.goodsPrice, g.goodsMainCategory, g.score AS score, COUNT(*) as cnt 
+	        FROM goods g
+			CROSS JOIN lodgingdetail d ON g.goodsId = d.goodsId
+			where d.goodsSubCategory = #{goodsSubCategory} and g.goodsMainCategory = "숙박"
+			group BY g.uid;
+      ]]>
+    </select>
+    
+      <select id="basicFiltering1" parameterType="String" resultType="goodsVO">
+    	<![CDATA[
+		SELECT 	g.goodsId, g.uid, g.goodsName, g.goodsPrice, g.goodsMainCategory, g.score AS score, COUNT(*) as cnt 
+	        FROM goods g
+			CROSS JOIN ticketdetail t ON g.goodsId = t.goodsId
+			where t.goodsSubCategory = #{goodsSubCategor}  AND g.goodsMainCategory = "투어티켓"
+			group BY g.uid;
+      ]]>
+    </select>
+    
+    
+     <select id="filtering" parameterType="lodgingdetailVO" resultType="goodsVO">
+	    <![CDATA[
+			SELECT g.goodsId, g.uid, g.goodsName, g.goodsPrice, AVG(g.score) AS score, COUNT(*) as cnt 
+	        FROM goods g
+			CROSS JOIN lodgingdetail d ON g.goodsId = d.goodsId
+	    ]]>
+    	<where>
+    		  <if test="goodsSubCategory != '' and goodsSubCategory != null">
+	           AND d.goodsSubCategory = #{goodsSubCategory} 
+	         </if>
+	          <if test="goodsStart != null">
+	           AND #{goodsStart} >= goodsStart
+	         </if>
+	          <if test="goodsEnd != null">
+	           AND goodsEnd >= #{goodsEnd} 
+	         </if>
+	         <if test="lodgingType != '' and lodgingType != null">
+	           AND lodgingType in (#{lodgingType}) 
+	         </if>
+	         <if test="numOfTourist != '' and numOfTourist != null">
+	             AND numOfTourist >= #{numOfTourist} 
+	         </if>       
+	         <if test="bedAmount != '' and bedAmount != null">
+	             AND bedAmount >= #{bedAmount} 
+	         </if>
+	         <if test="TV != '' and TV != null">
+	             AND TV in (#{TV}) 
+	         </if>
+	         <if test="wifi != '' and wifi != null">
+	             AND wifi in (#{wifi}) 
+	         </if>
+	         <if test="refrigerator != '' and refrigerator != null">
+	             AND refrigerator in (#{refrigerator}) 
+	         </if>
+	         <if test="airConditioner != '' and airConditioner != null">
+	             AND airConditioner in (#{airConditioner}) 
+	         </if>
+	         <if test="swimmingPool != '' and swimmingPool != null">
+	             AND swimmingPool in (#{swimmingPool}) 
+	         </if>
+	         <if test="breakfast != '' and breakfast != null">
+	             AND breakfast in (#{breakfast}) 
+	         </if>
+	         <if test="spar != '' and spar != null">
+	             AND spar in (#{spar}) 
+	         </if>
+	         <if test="hairAppliance != '' and hairAppliance != null">
+	             AND hairAppliance in (#{hairAppliance}) 
+	         </if>
+	         <if test="petsAllowed != '' and petsAllowed != null">
+	             AND petsAllowed in (#{petsAllowed}) 
+	         </if>
+	         <if test="store != '' and store != null">
+	            AND store in (#{store}) 
+	         </if>
+	         <if test="disabledAccessibility != '' and disabledAccessibility != null">
+	             AND disabledAccessibility in (#{disabledAccessibility}) 
+	         </if>
+	         <if test="parking != '' and parking != null">
+	             AND parking in (#{parking}) 
+	         </if>
+	         <if test="restaurant != '' and restaurant != null">
+	             AND restaurant in (#{restaurant}) 
+	         </if>
+	         <if test="hotSpring != '' and hotSpring != null">
+	             AND hotSpring in (#{hotSpring}) 
+	         </if>
+	         <if test="checkIn != null">
+	            AND checkIn >= #{checkIn}
+	         </if>   
+	          <if test="checkIn != null">
+	            AND checkOut >= #{checkOut}
+	         </if>   
+	         <if test="singleBed != '' and singleBed != null">
+	            AND lodgingType in (#{lodgingType})       
+	         </if> 
+	         <if test="doubleBed != '' and doubleBed != null">
+	            AND doubleBed in (#{doubleBed})       
+	         </if> 
+	         <if test="twinBed != '' and twinBed != null">
+	            AND twinBed in (#{twinBed})       
+	         </if> 
+	         <if test="ondol != '' and ondol != null">
+	            AND ondol in (#{ondol})       
+	         </if> 
+      </where>
+         group BY g.uid
+   </select>
+   
+       <select id="filtering1" parameterType="lodgingdetailVO" resultType="goodsVO">
+	    <![CDATA[
+			SELECT g.goodsId, g.uid, g.goodsName, g.goodsPrice, AVG(g.score) AS score, COUNT(*) as cnt 
+	        FROM goods g
+			CROSS JOIN ticketdetail d ON g.goodsId = d.goodsId
+	    ]]>
+    	<where>
+    		  <if test="goodsSubCategory != '' and goodsSubCategory != null">
+	           AND d.goodsSubCategory = #{goodsSubCategory} 
+	         </if>
+	          <if test="goodsStart != null">
+	           AND #{goodsStart} >= goodsStart
+	         </if>
+	          <if test="goodsEnd != null">
+	           AND goodsEnd >= #{goodsStart} 
+	         </if>
+	         <if test="guide != '' and guide != null">
+	           AND guide in (#{guide}) 
+	         </if>
+
+      </where>
+         group BY g.uid
+   </select>
+   
+   <!-- 커뮤니티 글 최신순  -->
+	<select id="communityList1" resultMap="boardResult">
+	
+		select * from board order by writeDate DESC limit #{skip}, #{amount};
+	
+	</select>
+
+
+	<!-- 커뮤니티 글 인기순  -->
+	<select id="communityList2" resultMap="boardResult">
+	
+		select * from board order by likecount DESC limit #{skip}, #{amount};
+	
+	</select>
+
+
+	<!--카테고리별-->
+	<select id="communityList3" resultMap="boardResult">
+	
+		select * from board where articleCategory = #{search} order by writeDate DESC limit #{skip}, #{amount};
+	
+	</select>
+	
+	<!-- 커뮤니티글 전체 수 -->
+	<select id="totalcommunityPage1" resultType="int">
+	
+		select count(*) from board;
+	
+	</select>
+
+	<!-- 카테고리별 커뮤니티글 전체 수 -->
+	<select id="totalcommunityPage2" resultType="int">
+	
+		select count(*) from board where articleCategory = #{search}; 
+	
+	</select>
+		
+
+
+<!--검색키워드로-->
+	<select id="findArticleList" resultMap="boardResult">
+	
+		select * from board where articleCategory = #{search} OR userName = #{search} OR LOCATE(#{search}, title) > 0
+
+	order by writeDate DESC limit #{skip}, #{amount};
+	
+	</select>
+	
+	<!-- 검색키워드의 전체 수 -->
+	<select id="totalcommunityPage3" resultType="int">
+	
+		select count(*) from board where articleCategory = #{search} OR userName = #{search} OR LOCATE(#{search}, title) > 0;
+	
+	</select>
+    
+    <select id="selectLikeGoods" parameterType="String" resultType="int">
+		<![CDATA[
+			SELECT gl.goodsId
+			FROM goodsliked gl
+			CROSS JOIN 
+			(SELECT goodsId
+				FROM goods
+				WHERE uid = #{buid}) g
+			WHERE g.goodsId = gl.goodsId and gl.uid = #{uid}
+		]]>
+	</select>
+	
+	<!--qna 수정-->
+	<update id="csUpdate" parameterType="csVO">
+		update cs
+		set title = #{title}, 
+			txtContent = #{txtContent},
+			writeDate=now()
+		where csNO = #{csNO}
+	</update>
+	
+	<!-- 사업자 리뷰 관련 -->
+	<select id="businessReviewListCri" resultType="goodreviewVO">
+	SELECT r.goodsId, r.content, r.score, r.regDate, r.userName FROM goodreview r
+			CROSS JOIN (SELECT uid, goodsId FROM goods WHERE uid = #{uid}) g
+			WHERE g.goodsId = r.goodsId and g.uid = #{uid}
+			
+		limit #{cri.skip}, #{cri.amount};
+	
+	</select>
+	
+	<select id="TotalbusinessReviewList" resultType="int">
+	<![CDATA[
+	 SELECT count(*) FROM goodreview r
+			CROSS JOIN (SELECT uid, goodsId FROM goods WHERE uid = #{uid}) g
+			WHERE g.goodsId = r.goodsId and g.uid = #{uid}
+	]]>
+	</select>
+	
+	<!-- 관심내역 조회 -->
+	<select id="selectsWishList" resultType="goodsVO" parameterType="string">
+		SELECT *
+		FROM goods g cross JOIN 
+			(SELECT goodsId
+			FROM goodsliked
+			WHERE uid = #{uid}) w
+		WHERE g.goodsId = w.goodsId;
+	</select>
+	
+	<!-- 좋아요 조회 -->
+	<select id="selectsLikeList" resultType="boardVO" parameterType="string">
+		SELECT *
+		FROM board b cross JOIN 
+			(SELECT articleNO
+			FROM liked
+			WHERE uid = #{uid}) l
+		WHERE l.articleNO = b.articleNO;
+	</select>
+    
+    <!-- 커뮤니티 글 인기순  -->
+	<select id="selectHotArticle" resultMap="boardResult">
+	
+		select * from board order by likecount DESC LIMIT 1;
+	
+	</select>
+	
+	<select id="selectTicketDetail" parameterType="int" resultType="lodgingdetailVO">
+		<![CDATA[
+			SELECT * from ticketdetail
+			where goodsId = #{goodsId}
+		]]>
+	</select>
+    
+</mapper>

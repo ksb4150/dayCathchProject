@@ -1,0 +1,53 @@
+.sidebardiv1 {
+    background-color:rgb(78, 136, 245);
+    width: 250px;
+    height: 70px;
+    border: 1px solid gainsboro;
+    text-align: center;
+}
+
+.mypage_sidebar_a, .mypage_sidebar_b {
+    text-decoration: none;   
+}
+.mypagesidebar0 {
+    width: 250px;
+    text-align: center;
+    border: 1px solid gainsboro;
+
+}
+.mypagesidebar_ul {
+    list-style-type: none;
+    padding: 0px;
+
+}
+
+summary {
+    cursor: pointer;
+  }
+
+  summary {
+    list-style: none;
+  }
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mypage_sidebar_a:link {
+    color:black;
+ }
+
+ .mypage_sidebar_a:visited {
+    color:black;
+  }
+
+  .mypage_sidebar_b:link {
+    color:rgb(150, 145, 145)
+ }
+
+ .mypage_sidebar_b:visited {
+    color:rgb(150, 145, 145)
+  }
+
+
+
+

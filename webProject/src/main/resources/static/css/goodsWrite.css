@@ -1,0 +1,208 @@
+.goods_div{
+    display: flex;
+  
+}
+.goods_div {
+    width: 500px;
+}
+
+.goods_div div{
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+.goodsWrite_btn{
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #007ac9;
+    border-style: none;
+    border-radius: 5px;
+    color:#fff;
+}
+
+.goods_tit input{
+	width: 430px;
+    height: 48px;
+    margin-top: 15px;
+    border-style: none;
+    background: whitesmoke;
+    padding-left: 10px;
+    border-radius: 7px;
+  
+}
+
+.goods_info{
+    margin-top: 20px;
+}
+
+#goodsInfo{
+	  width: 420px;
+	  border-style: none;
+	  border-radius: 7px;
+	  background: whitesmoke;
+	  padding: 10px;
+	  margin-bottom: 20px;
+
+}
+
+#preview{
+	border-style: none;
+    background: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#goodsStart{
+	height: 10px;
+    font-size: 13px;
+    border-style: none;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+#goodsEnd{
+	height: 10px;
+    font-size: 13px;
+    border-style: none;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#checkIn{
+	height: 10px;
+    font-size: 13px;
+    border-style: none;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+#checkOut{
+	height: 10px;
+    font-size: 13px;
+    border-style: none;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.goods_detail_tit{
+	margin-bottom: 8px;
+}
+
+.goods_detail{
+	margin-bottom: 15px;
+}
+
+#goodsCount {
+	width: 110px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	color:  #007ac9;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	margin-bottom: 5px;
+}
+
+.goodsCount_down {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_minus.png);
+	background-repeat:no-repeat;
+	background-size: 23px 23px;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+.goodsCount_up {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_plus.png);
+    background-size: 23px 23px;
+    border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+#numOfTourist {
+	width: 110px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	color:  #007ac9;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	margin-bottom: 5px;
+}
+
+.numOfTourist_down {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_minus.png);
+	background-repeat:no-repeat;
+	background-size: 23px 23px;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+.numOfTourist_up {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_plus.png);
+    background-size: 23px 23px;
+    border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+#bedAmount {
+	width: 110px;
+	font-size: 18px;
+	text-align: center;
+	font-weight: bold;
+	color:  #007ac9;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	margin-bottom: 5px;
+}
+
+.bedAmount_down {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_minus.png);
+	background-repeat:no-repeat;
+	background-size: 23px 23px;
+	border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+.bedAmount_up {
+	width: 24px;
+	height: 24px;
+	background-image: url(//image.goodchoice.kr/images/web_v3/ico_plus.png);
+    background-size: 23px 23px;
+    border: none;
+	border-right:0px; border-top:0px; 
+	border-left:0px; border-bottom:0px;
+	cursor: pointer;
+}
+
+
+

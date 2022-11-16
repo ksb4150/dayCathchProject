@@ -1,0 +1,290 @@
+.contents_area{
+    width: 100%;
+    display: flex;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+
+.soon{
+    width:500px;   
+    margin: auto;
+}
+.contents{
+    margin: auto;
+}
+
+#pwdChk1, #pwdChk2, #pwdChk3, #pwdChk4, #idChk1, #idChk2, #idChk3, #phoneChk1, #phoneChk2,
+#nameChk1, #nameChk2, #dir_email_type, #birthChk1, #birthChk2, #genderChk1 {
+    display: none;
+}
+
+.txt_check {
+    color: red;
+}
+
+.input_row input{
+    margin-top: 12px;
+}
+
+.item_lft{
+    width: 390px;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+}
+
+.item_lft1{
+    width: 380px;
+    margin-bottom: 10px;
+}
+
+.input_row_email {
+    display : flex;
+    
+}
+
+.gol_wrap {
+    height: 50px;
+    width: 30px;
+    line-height: 50px;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.inp_email {
+    width: 220px;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    display: block;
+}
+
+.input_select_email {
+    width: 200px;
+    height: 50px;
+    margin : 13px 10px 10px 10px;
+}
+    
+.inp_pw{
+    width: 490px;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    display: block;
+}
+
+.txt{
+    width: 490px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+    display: block;
+}
+
+.span_zipcode{
+	width: 400px;
+	 display: flex;
+}
+
+.txtZipcode{
+	width: 300px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    margin-right: 30px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+    display: block;
+}
+
+.txt_textarea{
+	width: 490px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    height: 100px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+    display: block;
+}
+    
+.nput_address{
+    display: inline-block;
+}
+    
+.item_phone {
+    width: 345px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.item_businessNumber{
+	   width: 345px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.item_count {
+	width: 390px;
+    font-weight: normal;
+    outline-style: none;
+    padding: 10px;
+    height: 50px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background: #fff;
+    font-size: 16px;   
+    color: #555;
+    position: relative;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+
+.agreement{
+	margin-top:20px;
+}
+
+
+    
+.btn_nor{
+  	
+    margin: 0px;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0 15px;
+    background: #007ac9;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    font-size: 16px;  
+}
+
+.btn_nor1{
+    width: 140px;
+}
+
+.btn_nor2{
+	width: 94px;
+	margin: 0px;
+    border: 0 none;
+    cursor: pointer;
+    padding: 0 15px;
+    background: #007ac9;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    font-size: 16px; 
+}
+
+
+.form_align {
+    width: 200px;
+    margin: 0px;
+    padding: 10px;
+    display: inline;
+}
+
+.form_align li{
+    display: inline;
+    margin: 2px;
+}
+    
+.btn_block_input{
+    margin-top: 20px;
+    margin-left: 26px;
+    width: 210px;
+    padding: 0px;
+    border: 0 none;
+    cursor: pointer;
+    background: #007ac9;
+    color: #fff;
+    text-align: center;
+    height: 60px;
+    font-size: 18px;
+}

@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+fieldset {
+    width: 400px;
+    margin-left: 225px;
+    margin-top: 50px;
+    border: 1px solid darkgray;
+}
+#userPwd1{
+	margin-bottom: 10px;
+}
+h2{
+	
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+input[type=text], input[type=password] {
+   width: 70%;
+    padding: 9px 19px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    height: 30px;
+    color: #333;
+    margin-left: 50px;
+}
+
+.delete_wrapper {
+    width: 450px;
+    padding: 28px 0 0;
+    height: 220px;
+}
+
+.inp_bt {
+   	width: 100px;
+    border: none;
+    margin-left: 112px;
+    cursor: pointer;
+    height: 30px;
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding-bottom: 36px;
+    padding-top: 20px;
+    margin-top: 40px;
+    background-color: #2478c6;
+    color: rgb(255, 255, 255);
+}
+
+#m_delete + #cancel {
+	margin-left:20px;
+}

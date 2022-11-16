@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.stit_con_title{
+    font-size: 20px;
+    width: 500px;
+    height: 20px; 
+}
+
+.part_area_in{
+    margin: 0px;
+    width: 460px;
+}
+
+.content_area1{
+    display: flex;
+}
+
+.content_area1 li{
+    list-style: none;
+    display: felx;
+}
+
+.list_count {
+    border: 1px solid gray;
+    width: 442px;
+    height: 150px;
+    padding : 0px;
+}
+
+.list_count li{
+    padding-top: 10px;
+    display: flex;
+}
+
+.board_category {
+    width: 50px;
+    text-align: center;
+}
+
+.tit {
+    width: 220px;
+    overflow: hidden;
+}
+
+.date {
+    width: 85px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.list_count li a{
+   color : black;
+   padding: 0px;
+   margin: 0px;
+   text-decoration: none;
+   display: flex;
+}

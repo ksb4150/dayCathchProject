@@ -1,0 +1,154 @@
+   @charset "utf-8";
+.qna_body {
+    
+    width: 1200px;
+    margin: 0px;
+    justify-content: center;
+    align-items: center;
+}
+
+.qna_wrap {
+    width: 480px;
+    margin: 0 auto;
+}
+
+.tab_list_wrap {
+    margin-left:50px;
+}
+
+.qna_wrap h3 {
+   
+    margin-bottom: 52px;
+    font-size: 28px;
+    text-align: center;
+    color: #333;
+    font-weight: 400;
+}
+
+.tab_wrapper{
+	margin-left:20px;
+}
+
+.qna_wrap .tablist {
+    margin-bottom: 10px;
+    margin-right:10px;
+      
+}
+
+.qna_wrap .tablist a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border-bottom: 1px solid rgb(100, 98, 98);
+    
+}
+
+.qna_wrap .tablist.col2 li {
+    width: 50%;
+   
+}
+
+.qna_wrap .tablist li {
+    position: relative;
+    float: left; 
+}
+
+
+.tab_list .tablist.col2 {
+    display: block;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.tab_list li {
+    list-style-type: none;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    
+}
+
+.tab_list .tablist.col2 a{
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+    color: #666;
+    
+   
+}
+
+.tablist.col2 a:visited {
+    color:black;
+    text-decoration:none;
+}
+
+
+ 
+.select_category {
+    width: 120px;
+    height: 25px;
+}
+
+label {
+
+    font-weight: 200;
+    margin-bottom:10px;
+
+}
+
+
+#inp_order, #inp_writer, #inp_phone, #inp_title{
+    width: 100%;
+    padding: 2px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: 300px;
+    height: 30px;
+    color: #333;
+}
+
+#inp_content {
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    height: 130px;
+    color: #333;
+}
+
+.qna_wrap label {
+    display: block;
+    padding-top: 24px;
+    font-size: 14px;
+    color: #333;
+    font-weight: 600;
+}
+
+#Submit {
+    margin-right:90px;
+}
+
+.qna_wrap button[type=submit] {
+    
+    margin-left:50px;
+    position: relative;
+    width: 18%;
+    height: 50px;
+    margin-top: 40px;
+    margin-left:220px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background-color: #2478c6;
+    font-size: 14px;
+    text-align:center;
+    vertical-align: middle;
+    color: #fff;
+    -webkit-appearance: button;
+    cursor: pointer;
+    overflow: visible;
+    border:none;
+    
+}

@@ -1,0 +1,271 @@
+@charset "UTF-8";
+
+.contents_area{
+    width: 100%;
+    margin-bottom:50px;
+}
+
+.contents{
+    width: 1200px;
+    margin: auto;
+}
+
+
+
+/*서치박스*/
+.searchBox {
+    height: 300px;
+    width: 1200px;
+    position: relative;
+    top : -120px;
+    padding : 10px;
+    margin : auto;
+    z-index : 1;
+    background-color: #fff;
+    border-radius: 15px;
+   box-shadow: 1px 1px 10px gray;
+}
+
+.iconBar {
+    width: 100%;
+    height: 150px;
+    padding : 10px 0px;
+    display: flex;
+    align-items: center;
+  	border-bottom: 1px solid #ddd;
+}
+
+.iconBar ul {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.iconBar li{
+    margin: 0px 50px;
+    padding: 0px;
+}
+
+.iconBar p {
+    width : 90px;
+    height: 90px;
+}
+
+.iconBar a, a:active, a:focus {
+    color : black;
+    text-decoration: none;
+}
+
+.iconBar img {
+    width: 100%;
+    height: 100%;
+} 
+
+.iconHotel:hover {
+   content: url('../img/hotelColor.png')
+}
+
+.iconTourism:hover {
+    content: url('../img/tourismColor.png')
+}
+
+.iconAirpalne:hover{
+   content: url('../img/airplaneColor.png')
+}
+
+.iconFestival:hover {
+   content: url('../img/festivalColor.png')
+}
+
+.iconCommunity:hover {
+   content: url('../img/communityColor.png')
+}
+
+.iconEvent:hover {
+   content: url('../img/eventColor.png')
+}
+
+#search {
+    padding : 12px 25px;
+    height: 100px;
+    margin-left: 20px;
+ 
+}
+
+#search form {
+	width: 100%;
+	display: flex;
+}
+
+.backgroundImg {
+	width:100%;
+    height: 300px;
+    position: relative;
+    background-image: url('../img/eventPageBanner.jpg');
+    z-index : 0;
+    top:7.5px;
+    padding:0px;
+}
+
+.event_tit{
+	margin-left: 80px;
+	margin-bottom: 20px;
+}
+.event_tit_ul{
+	    
+	    padding:0px;
+	     border-bottom: 1px solid gray;
+	  
+}
+
+.event_tit_ul li{
+	   margin-bottom: 20px;
+	       display: inline-block;
+	     
+	       
+}
+
+.event_tit_ul li a {
+	  text-decoration: none;
+	  color:#000;
+	  
+}
+
+/*이벤트 */
+#festival_wrap {
+	width: 100%;
+}
+
+.festival {
+	width: 350px;
+	height: 430px;
+	margin-left: 40px;
+	margin-bottom: 20px;
+	text-align: center;
+	float: left;
+}
+
+.festival_img_wrap {
+	width: 100%;
+	height: 260px;
+	margin: 0;
+}
+
+.festival_img_wrap img {
+	width: 280px;
+	height: 100%;
+	border-radius: 10px;
+}
+
+.festival_info_wrap {
+	height: 160px;
+}
+
+.festival_title {
+	height: 50px;
+	font-size: 16px;
+	font-weight: 600;
+	margin-top: 10px;
+	line-height: 25px;
+	color: #007bff;
+}
+
+.festival_addr {
+	height: 50px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #6c6c6c;
+}
+
+.festival_date {
+	height: 30px;
+	font-size: 14px;
+	color: #6c6c6c;
+}
+
+.festival_tel {
+	height: 30px;
+	font-size: 14px;
+	color: #6c6c6c;
+}
+
+.area_cs_info{
+	clear: both;
+    width: 1200px;
+    border-top: 1px solid gray;
+    height: 300px;
+    display: flex;
+}
+
+.cs_info{
+    width: 600px;
+    height: 300px;
+    
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+  
+}
+
+.cs_info ul{
+    list-style: none;   
+}
+
+.area_cs_number{
+    width: 200px;
+    height: 200px;
+    
+  
+    font-size: 30px;
+    float: left;
+}
+  
+  .area_cs_time{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid gray ;
+
+ 
+}
+  
+  .mypage_info{
+	
+    width: 700px;
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.mypage_info ul{
+    list-style: none;
+    width: 500px;
+   
+}
+
+.mypage_info ul li{
+    display: inline-block;
+    font-size: 18px;
+}
+
+.mypage_info_btn{
+  width: 150px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: none;
+    background-color:rgb(251, 182, 0);
+    color: #fff;
+
+}
+

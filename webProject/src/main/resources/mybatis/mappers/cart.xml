@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.mypage.dao.CartDAO">
+
+	<resultMap id="cartResult" type="cartVO">
+		<result property="cartId" column="cartId" />
+		<result property="goodsId" column="goodsId" />
+		<result property="uid" column="uid" />
+		<result property="cartckid" column="cartckid" />
+		<result property="goodsQty" column="goodsQty" />
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="companyName" column="companyName" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+		<result property="numOfTourist" column="numOfTourist" />
+		<result property="cartcheckin" column="cartcheckin"/>
+		<result property="cartcheckout" column="cartcheckout"/>
+		<result property="creDate" column="creDate" />
+	</resultMap>
+	
+	<resultMap id="goodsResult1" type="goodsVO">
+		<result property="goodsName" column="goodsName" />
+		<result property="goodsPrice" column="goodsPrice" />
+		<result property="goodsMainCategory" column="goodsMainCategory" />
+		<result property="goodsSubCategory" column="goodsSubCategory" />
+		<result property="goodsInfo" column="goodsInfo" />
+		<result property="companyName" column="companyName" />
+	    <result property="productPhoto" column="productPhoto" />
+		<result property="goodsCompanyInfo" column="goodsCompanyInfo" />
+		<result property="goodsImageFileName" column="goodsImageFileName" />
+	</resultMap>
+	
+	<resultMap id="lodgingResult1" type="lodgingdetailVO">
+		<result property="goodsId" column="goodsId" />
+		<result property="numOfTourist" column="numOfTourist" />
+		<result property="TV" column="TV" />
+		<result property="wifi" column="wifi" />
+		<result property="refrigerator" column="refrigerator" />
+		<result property="checkIn" column="checkIn" />
+		<result property="checkOut" column="checkOut" />
+		<result property="bedType" column="bedType" />
+	    <result property="bedAmount" column="bedAmount" />
+		<result property="airConditioner" column="airConditioner" />
+		<result property="swimmingPool" column="swimmingPool" />
+		<result property="breakfast" column="breakfast" />
+		<result property="spar" column="spar" />
+		<result property="hairAppliance" column="hairAppliance" />
+		<result property="petsAllowed" column="petsAllowed" />
+		<result property="store" column="store" />
+	    <result property="disabledAccessibility" column="disabledAccessibility" />
+		<result property="parking" column="parking" />
+		<result property="lodgingType" column="lodgingType" />
+		<result property="restaurant" column="restaurant" />
+		<result property="hotSpring" column="hotSpring" />
+		<result property="guide" column="guide" />
+	</resultMap>
+	
+	
+	<!-- 나중에 오류 가능성 있음 1은 회원장바구니 2는 비회원 장바구니-->
+	<select id="selectAllCartList1" resultMap="cartResult" parameterType="cartVO">
+		<![CDATA[
+		 	select * from cart WHERE uid=#{uid} order by creDate DESC;
+		 ]]>
+	</select>
+	
+	<select id="selectAllCartList2" resultMap="cartResult" parameterType="cartVO">
+		<![CDATA[
+		 	select * from cart WHERE cartckid=#{cartckid} && uid IS NULL order by creDate DESC;
+		 ]]>
+	</select>
+	
+	<!-- 상품담기 -->
+	<insert id="insertCart" parameterType="cartVO">
+		<![CDATA[
+		insert into cart(goodsId, uid, buid, cartckid, goodsName, goodsQty, goodsPrice, companyName, goodsImageFileName, numOfTourist, cartcheckin,  cartcheckout)
+		values(#{goodsId}, #{uid}, #{buid}, #{cartckid}, #{goodsName}, #{goodsQty}, #{goodsPrice}, #{companyName}, #{goodsImageFileName}, #{numOfTourist}, #{cartcheckin}, #{cartcheckout})
+		]]>
+	</insert>
+	
+	<!-- 삭제 -->
+	<delete id="deleteCart" parameterType="int">
+		<![CDATA[
+			delete from cart
+			where 
+			cartId=#{cartId}
+		]]>
+	</delete>
+	
+	<!-- 개수 변경 -->
+	<update id="modifyQty" parameterType="int">
+	    <![CDATA[
+			update cart
+			       set goodsQty=#{goodsQty}
+		 	       where cartId=#{cartId}
+    	]]>
+	</update>
+<!--  단일 상품 주문시 정보 가져옴  -->
+	<select id="selectpaymentinfo1" resultMap="lodgingResult1" parameterType="lodgingdetailVO">
+		<![CDATA[
+		 	select * from cart WHERE goodsId=#{goodsId};
+		 ]]>
+	</select>
+	
+	<select id="selectpaymentinfo2" resultMap="goodsResult1" parameterType="goodsVO">
+		<![CDATA[
+		 	select * from cart WHERE goodsId=#{goodsId};
+		 ]]>
+	</select>
+	
+	
+	
+
+</mapper>

@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.springboot.member.dao.MemberDAO">
+	<resultMap id="memResult" type="memberVO">
+		<result property="userId" column="userId" />
+		<result property="userPwd" column="userPwd" />
+		<result property="userName" column="userName" />
+		<result property="userBirth" column="userBirth" />
+		<result property="userGender" column="userGender" />
+		<result property="userType" column="userType" />
+		<result property="userPhoneNumber" column="userPhoneNumber" />
+	</resultMap>
+
+	<select id="userIdOverlapCheck" resultType="String">
+		<![CDATA[
+			select userId
+			from user
+			where userId=#{userId}
+		]]>
+	</select>
+	
+	<select id="selectAllMemberList" resultMap="memResult">
+		<![CDATA[
+		 	select * from t_member order by joinDate desc
+		 ]]>
+	</select>
+	
+	<select id="selectName" resultType="String">
+		<![CDATA[
+			select name from user
+			where id= 'ksb4150'
+		]]>
+	</select>
+	
+	<select id="selectPwd" resultType="int">
+		<![CDATA[
+			select pwd from user
+			where id = 'ksb4150'
+		]]>
+	</select>
+	
+	<select id="selectMemberById" resultType="memberVO" parameterType="String">
+		<![CDATA[
+		
+			select * from user
+			where
+			userId = #{userId}
+			
+		]]>
+	</select>
+	
+	<select id="selectMemberByPwd" resultMap="memResult" parameterType="int">
+		<![CDATA[
+		
+			select * from user
+			where 
+			pwd = #{pwd}
+			
+		]]>
+	</select>
+	
+	 <!-- 아이디 찾기 -->
+	 <select id="findId" resultType="memberVO" >
+		<![CDATA[
+		
+			select userId
+			from user 
+			where userName=#{userName} and userPhoneNumber=#{userPhoneNumber}
+	
+		]]>
+	</select> 
+	
+	<select id="idCheck" resultType="int">
+		<![CDATA[
+			select count(*) 
+			from user
+			where  userId = #{userId}
+		]]>
+	</select>
+	
+	<!-- 회원여부 확인 -->
+	 <select id="pwFind_Lookup" resultType="memberVO" >
+		<![CDATA[
+			select *
+			from user 
+			where userId=#{userId}
+			
+		]]>
+	</select> 
+					
+	
+	<!-- 비밀번호 조회 -->
+	 <select id="pwFind_select" parameterType="memberVO" resultType="memberVO">
+		<![CDATA[
+			select userPwd
+			from user 
+			where userId=#{userId} and userName=#{userName}
+		]]>
+	</select> 
+	
+	<!-- 비밀번호 변경 -->
+	<update id="updatePw" parameterType="memberVO" >
+	update user set userPwd = #{userPwd} where userId = #{userId}
+	</update>
+	
+		
+	  
+	<insert id="insertMember" parameterType="memberVO">
+		<![CDATA[
+			insert into user(uid, userId, userPwd, userName, userBirth, userPhoneNumber, userGender, userType)
+			values(#{uid}, #{userId}, #{userPwd}, #{userName}, #{userBirth}, #{userPhoneNumber}, #{userGender}, #{userType})
+		]]>
+	</insert>
+	
+	<insert id="insertBusinessAddmember" parameterType="memberVO">
+		<![CDATA[
+			insert into user(uid, userId, userPwd, userName, userBirth, userPhoneNumber, userGender, userType, zipcode, userImageFileName, roadAddress, jibunAddress, extraAddress, info_a, info_b, businessNumber, companyName, adminAllow, businessPic, companyNum, companyInfo, facilities, companyNotice)
+			values(#{uid}, #{userId}, #{userPwd}, #{userName}, #{userBirth}, #{userPhoneNumber}, #{userGender}, #{userType}, #{zipcode}, #{userImageFileName}, #{roadAddress}, #{jibunAddress}, #{extraAddress}, #{info_a}, #{info_b}, #{businessNumber}, #{companyName}, 0, #{businessPic}, #{companyNum}, #{companyInfo}, #{facilities}, #{companyNotice})
+		]]>
+	</insert>
+	
+	
+	
+	<insert id="insertMember2" parameterType="java.util.Map">
+		<![CDATA[
+			insert into user(id, pwd, name, email)
+			values(#{id}, #{pwd}, #{name}, #{email})
+		]]>
+	</insert>
+	
+	<update id="updateMember" parameterType="memberVO">
+		<![CDATA[
+			updateuser
+			set pwd=#{pwd}, name=#{name}, email=#{email}
+			where id=#{id}
+		]]>
+	</update>
+	
+	<delete id="deleteMember" parameterType="String">
+		<![CDATA[
+			delete from user
+			where 
+			id=#{id}
+		]]>
+	</delete>
+		
+		<!-- 로그인 -->
+	<select id="loginById" resultType="memberVO" parameterType="memberVO">
+		<![CDATA[
+			select * from user
+			where userId = #{userId}
+		]]>
+	</select>
+	
+	  <!--카카오-->
+	<select id="findkakao" parameterType="java.util.HashMap" resultType="memberVO">
+		select * from user where userName=#{nickname} and userId=#{email}
+	</select>
+	
+	<insert id="kakaoinsert" parameterType="java.util.HashMap">
+		insert into user(uid, userName, userId, userType)
+			values(#{uid}, #{nickname}, #{email}, #{userType})
+	</insert>
+	
+	<!-- 네이버 -->
+	<select id="findNaver" parameterType="memberVO" resultType="memberVO">
+		select * from user where userName=#{userName} and userId=#{userId}
+	</select>
+	
+	<insert id="naverInsert" parameterType="memberVO">
+		insert into user(uid, userName, userId, userType )
+			values( #{uid}, #{userName}, #{userId}, 1 )
+	</insert>
+	
+	<!-- 회원정보수정 -->
+	<update id="memberModify"> 
+		<![CDATA[
+			update user set
+			userName= #{userName},
+			userBirth = #{userBirth},
+			userPhoneNumber = #{userPhoneNumber}
+			where userId = #{userId}
+		]]>
+	</update>	
+	
+	<!-- 주문자 정보 -->
+  	<select id="getMemberInfo" resultType="memberVO" parameterType="memberVO">
+  	
+	  	<![CDATA[
+	  		SELECT * FROM user WHERE uid = #{uid}
+	  	]]>
+	  	
+  	</select>
+  	
+
+  	<!-- 비지니스 회원정보 수정 -->
+  	<select id="selectBusinessMember" resultType="memberVO" parameterType="String">
+  	
+	  	<![CDATA[
+	  		SELECT * FROM user WHERE uid = #{uid}
+	  	]]>
+	  	
+  	</select>
+  	
+  	<update id="updateModMember" >
+  	
+	  	<![CDATA[
+	  		UPDATE user SET userName = #{userName}, userBirth = #{userBirth},
+	  		zipcode = #{zipcode}, userPhoneNumber = #{userPhoneNumber}, roadAddress = #{roadAddress}, jibunAddress = #{jibunAddress}, extraAddress = #{extraAddress}, businessNumber = #{businessNumber}, companyName = #{companyName}, companyNum = #{companyNum}, facilities = #{facilities}, companyNotice = #{companyNotice}, companyInfo = #{companyInfo}
+	    	WHERE uid = #{uid}
+	  	]]>
+	  	
+  	</update>
+  	
+  <!-- 마이페이지에 표시될 장바구니에 담긴 상품 개수 -->
+	<select id="cartCount" resultType="int">
+		
+		<![CDATA[
+	SELECT count(*)
+	FROM cart WHERE uid = #{uid} order by creDate DESC;
+		 ]]>
+	
+	</select>
+
+<!-- 마이페이지에 표시될 회원 찜목록한 상품 개수 -->
+<select id="likeCount" resultType="int">
+	
+	<![CDATA[
+SELECT count(*)
+FROM liked WHERE uid = #{uid};
+		 ]]>
+	
+	</select>
+
+<!-- 마이페이지에 표시될 회원이 주문완료한 상품 개수 -->
+<select id="totalOrderCount" resultType="int">
+	
+	<![CDATA[
+SELECT count(*)
+FROM (SELECT og.ordersNO, o.uid, og.goodsId, og.goodsQty, og.goodsPrice, og.goodsName, og.totalPrice, og.cartcheckin, og.cartcheckout, o.ordererName, 
+o.ordererPhoneNumber, o.usePoint, o.savePoint, o.finalTotalPrice, og.orderState, o.creDate 
+FROM ordersgoods AS og JOIN orders AS o ON og.ordersNO = o.ordersNO) ad WHERE ad.uid = #{uid} and ad.orderState = "결제완료" order by creDate DESC;
+		 ]]>
+	
+	</select>
+
+
+<!-- 마이페이지에 표시될 회원이 주문취소한 상품 개수 -->
+<select id="totalOrderCancelCount" resultType="int">
+	
+	<![CDATA[
+SELECT count(*)
+FROM (SELECT og.ordersNO, o.uid, og.goodsId, og.goodsQty, og.goodsPrice, og.goodsName, og.totalPrice, og.cartcheckin, og.cartcheckout, o.ordererName, 
+o.ordererPhoneNumber, o.usePoint, o.savePoint, o.finalTotalPrice, og.orderState, o.creDate 
+FROM ordersgoods AS og JOIN orders AS o ON og.ordersNO = o.ordersNO) ad WHERE ad.uid = #{uid} and ad.orderState != "결제완료" order by creDate DESC;
+		 ]]>
+	
+	</select>
+
+<!-- 마이페이지에 표시될 회원의 고객센터 글 개수 -->
+<select id="csCount" resultType="int">
+	
+	<![CDATA[
+SELECT count(*)
+FROM cs WHERE uid = #{uid} order by writeDate DESC;
+		 ]]>
+	
+	</select>
+
+
+<!-- 마이페이지에 표시될 회원의 커뮤니티 글 개수 -->
+<select id="articleCount" resultType="int">
+	
+	<![CDATA[
+SELECT count(*)
+FROM board WHERE uid = #{uid} order by writeDate DESC;
+		 ]]>
+	
+	</select>
+
+
+<!-- 마이페이지에 표시될 회원의 커뮤니티 댓글 개수 -->
+<select id="commentCount" resultType="int">
+	
+	<![CDATA[
+		SELECT count(*)
+		FROM boardcomment WHERE uid = #{uid};
+		 ]]>
+	
+	</select>
+  	
+  <!-- 		<update id="updateModMember"  parameterType="java.util.Map" >
+  	
+	  	<![CDATA[
+	  		UPDATE user SET userPwd = #{userPwd}, userName = #{userName}, userBirth = #{userBirth},
+	  		zipcode = #{zipcode}, userPhoneNumber = #{userPhoneNumber}, userImageFileName = #{userImageFileName},  roadAddress = #{roadAddress}, jibunAddress = #{jibunAddress}, extraAddress = #{extraAddress}, businessNumber = #{businessNumber}, companyName = #{companyName}, companyNum = #{companyNum}, facilities = #{facilities}, companyNotice = #{companyNotice}, companyInfo = #{companyInfo}
+	    	WHERE uid = #{uid}
+	  	]]>
+	  	
+  	</update> -->
+  	
+  	<!-- 포인트 쿠폰페이지에 표시될 회원의 총적립포인트 -->
+<select id="sumSavePoint" resultType="int">
+	
+	<![CDATA[
+		SELECT SUM(SAVEPOINT) FROM pointhis WHERE uid = #{uid};
+	 ]]>
+	
+	</select>
+
+
+<!-- 포인트 쿠폰페이지에 표시될 회원의 총 사용 포인트 -->
+<select id="sumUsePoint" resultType="int">
+	
+	<![CDATA[
+		SELECT SUM(usePoint) FROM pointhis WHERE uid = #{uid};
+		 ]]>
+	
+	</select>
+	
+	<!-- 회원탈퇴 -->
+<delete id="memberDelete" >
+	<![CDATA[
+		DELETE 
+		FROM USER
+		WHERE uid = #{uid} 
+	]]>
+</delete>
+
+<!--패스워드 체크-->
+<select id="passChk" resultType="int">
+	<![CDATA[
+		select count(*) 
+		from user
+		WHERE userId = #{userId} and userPwd = #{userPwd}
+		 ]]>
+</select>
+
+
+<!-- 암호화 비밀번호 변경 -->
+
+
+<update id="pwUpdate">
+	<![CDATA[
+	update user 
+	set userPwd = #{userPwd} 
+	where userId = #{userId}
+]]>
+</update>
+
+<select id="businessorderCount" resultType="int">
+
+	<![CDATA[
+		SELECT COUNT(*) FROM ordersgoods WHERE orderState = "결제완료" 
+		and goodsId in (SELECT goodsId FROM goods where uid = #{uid});
+	]]>
+	
+	</select>
+	
+	<select id="businessorderCancelCount" resultType="int">
+	
+		<![CDATA[
+		SELECT COUNT(*) FROM ordersgoods WHERE orderState != "결제완료" 
+		and goodsId in (SELECT goodsId FROM goods where uid = #{uid});
+	]]>
+	
+	</select>
+	
+	<select id="enrollGoods" resultType="int">
+	
+		<![CDATA[
+		SELECT COUNT(*) FROM goods where uid = #{uid} and adminAllow = 1;
+	]]>
+	
+	</select>
+	
+	<select id="waitingGoods" resultType="int">
+	
+		<![CDATA[
+		SELECT COUNT(*) FROM goods where uid = #{uid} and adminAllow != 1;
+	]]>
+	
+	</select>
+	
+	<select id="businessEarning" resultType="int">
+	
+		<![CDATA[
+		SELECT sum(totalPrice) FROM ordersgoods WHERE orderState = "결제완료" 
+		and goodsId in (SELECT goodsId FROM goods where uid = #{uid});
+	]]>
+	
+	</select>
+  	
+
+</mapper>

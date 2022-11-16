@@ -1,0 +1,145 @@
+@charset "UTF-8";
+
+.member{
+    width: 900px;
+    margin-bottom: 20px;
+    
+}
+
+.member h2 {
+	text-align: center;
+}
+
+.mod_wrapper {
+  width: 500px;
+  margin: auto;
+}
+
+.member h4 {
+    text-align: center;
+    margin-bottom: 0px;
+    font-size: 26px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+#pwdChk1, #pwdChk2, #pwdChk3, #pwdChk4, #phoneChk1, #phoneChk2,
+#birthChk1, #birthChk2 {
+    display: none;
+}
+
+.txt_check { 
+    color: red;
+}
+
+.member .field{
+    margin :20px 0; /*상하로 띄워주기*/
+}
+
+.member b{
+    display: block; /*수직 정렬하기 */
+    margin-bottom: 5px;
+}
+
+
+.member input:not(input[type=checkbox]),.member select{
+    border: 1px solid #dadada;
+    padding: 12px;
+    width: 95%;
+    margin-bottom: 5px;
+}
+
+#address_btn {
+    width:22%;
+}
+
+input#phone {
+	width:58%;
+}
+
+input#phoneChk {
+    width: 34%;
+}
+.member input[type=button]{
+background-color: #2478c6;
+color:#fff;
+width: 14%;
+cursor: pointer;
+overflow: visible;
+}
+
+.member input[type=submit] {
+background-color: #2478c6;
+color:#fff;
+width: 22%;
+cursor: pointer;
+overflow: visible;
+}
+
+.doubleChk {
+background-color: rgb(192, 192, 192);
+width:15%;
+cursor: pointer;
+overflow: visible;
+}
+
+#certifyCheck{
+	clear:both;
+}
+
+
+.member input:focus, .member select:focus{
+    border: 1px solid #2478c6;
+}
+
+.member input[type=number] {
+	border: 1px solid #dadada;
+    padding: 12px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.field.birth div{ 
+    display: flex;
+     
+}
+
+
+
+
+
+.field.gender div{
+    border: 1px solid #dadada;
+    padding: 15px 5px;
+    background-color: #fff;
+}
+
+.placehold-text{
+    display: block; 
+}
+
+.placehold-text:before{ 
+    position:absolute; 
+    right : 20px;
+    top:13px;
+    pointer-events: none; 
+}
+
+.modbtn{
+	    margin-left: 100px;
+}
+
+
+#m_submit, #m_delete{
+   margin-top: 20px;
+    margin-left: 23px;
+    width: 28%;
+    border: 0 none;
+    cursor: pointer;
+    background: #007ac9;
+    color: #fff;
+    text-align: center;
+    height: 50px;
+    font-size: 14px;
+}
+    

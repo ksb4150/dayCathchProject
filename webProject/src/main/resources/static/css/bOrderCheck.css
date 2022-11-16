@@ -1,0 +1,53 @@
+.bSalestable {
+	background-color: #fff;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.bSalestable caption {
+    text-align: center;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+.bSalestable tr {
+	border-bottom: 1px solid #eee;
+}
+
+.reserve_num {
+    width: 100px;
+}
+
+.reserver_name {
+    width: 150px;
+}
+
+.reserve_date {
+    width: 100px;
+}
+
+.check_in {
+    width: 100px;
+}
+
+.check_out {
+    width: 100px;
+}
+
+.goods_name {
+    width: 250px;
+}
+
+.reserve_status {
+    width: 80px;
+}
+
+.contents tr {
+	height: 50px;
+}

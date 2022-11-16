@@ -1,0 +1,88 @@
+@charset "UTF-8";
+        
+.mypage_my_point{
+    display: flex;
+    font-size: 20px;
+}
+.my_point_info{
+    display:flex;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+}
+
+.my_point_info span{
+    display: flex;
+    justify-content: center;
+}
+
+.mypage_my_point li{            
+    list-style: none;
+    display: inline-block;
+    margin: 20px;
+    
+}
+
+.my_point_list{
+    width: 200px;
+    height: 130px;
+    border-radius: 15px;
+    padding-top: 30px;
+    text-align: center;
+    align-items: center;
+    line-height: 50px;
+    display: flex;
+}
+
+.mypage_my_coupon ul{
+   display: flex;
+	 padding: 0px;
+	  width: 890px;
+	 background: whitesmoke;
+	 padding: 10px 0px 5px 10px;
+	 border-radius: 10px;      
+}
+      
+
+.mypage_my_coupon li{
+    list-style: none;
+    display: inline-block;
+    padding: 0px;
+    margin-right: 50px;
+    
+}
+.mypage_my_coupon li a{
+    text-decoration: none;
+    color: black;
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.tbl_coupon{
+	 background-color: whitesmoke;
+    border-radius: 15px;
+    width: 900px;
+    height: 200px;
+    
+}
+
+
+.tbl_coupon tr th{
+    font-size: 20px;
+    display: inline-block;
+    width: 445px;
+    text-align: center;
+    margin-left: 0px;
+
+    border-bottom: 1px solid #fff;
+
+}
+
+.tbl_coupon tbody tr{
+    text-align: center;
+}
+        
+.point_coupon_title {
+	text-align: center;
+			
+}

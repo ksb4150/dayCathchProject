@@ -1,0 +1,701 @@
+@charset "utf-8";
+
+.contents_area{
+    width: 1200px;
+    margin: auto;
+}
+
+.productName{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.text_area{
+    width: 700px;
+    display: flex;
+    float: left;
+    font-size: 30px;
+    margin-right: 50px;
+}
+
+.step {
+    width: 370px;
+    display: flex;
+    list-style: none;
+    float: right;
+    font-size: 20px;
+    margin-left: 40px;
+
+}
+
+.step li {
+    margin-right: 30px;
+
+}
+
+.step .num {
+    position: relative;
+    left: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #ccc;
+    color: #fff;
+}
+
+.step .active {
+    position: relative;
+    left: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+
+}
+
+.select_goods{
+    margin-bottom: 10px;
+}
+
+/* 별점 */
+.star_score {
+
+    display:flex;
+    flex-direction: row-reverse;
+    font-size:1.5em;
+    justify-content:space-around;
+    text-align:center;
+    width:5em;
+    margin-bottom: 15px;
+    
+  }
+  
+  .star_score input {
+    display:none;
+  }
+  
+  .star_score label {
+    color:#ccc;
+    cursor:pointer;
+    
+  }
+  
+  .star_score :checked ~ label {
+    color:#f90;
+  }
+  
+  .star_score label:hover,
+  .star_score label:hover ~ label {
+    color:#fc0;
+  }
+  
+  /* 별점 끝 */
+
+
+.step li{
+    margin-right: 30px;
+}
+
+
+
+.score_sum{
+font-size: 40px;
+ width: 130px;
+ height: 60px;
+ border-radius: 5px;
+ color: #007ac9;
+ text-align: center; 
+ margin-right: 10px;
+}
+.score_sum1{
+	font-size: 40px;
+ width: 100px;
+ height: 60px;
+ border-radius: 5px;
+ color: #007ac9;
+ text-align: center; 
+ margin-right: 10px;
+}
+
+
+
+.score_sum_tit{
+    font-size: 20px;
+    width: 100px;
+    height: 60px;
+    color: #007ac9;
+}
+
+.step .active{
+    position: relative;
+    left: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #000;
+    color: #fff;
+}   
+
+.productDetail{
+    display: flex;      
+}
+    
+.main_thumbnail{          
+    width: 900px;
+    height: 400px;
+	margin-right: 80px;
+}
+
+.main_thumbnail img{          
+    width: 100%;
+    height: 100%;
+}
+
+.main_thumbnail a img{
+    border-radius: 20px;
+} 
+
+.contents_item{
+    margin: 50px 50px 10px 0px;
+    font-size: 20px;
+}
+
+.contents_item input{
+    font-size: 17px;
+    width: 250px;
+    height: 37px;
+    margin: 10px 50px; 
+}
+ 
+.default_option {
+    width: 1200px;
+    display: flex;
+}
+
+.peopleNum {
+    height: 40px;
+    margin-top: 10px;
+    display : flex;
+}
+
+.peopleNum span {
+	margin-top: 5px;
+	margin-right: 20px;
+}
+
+#numOfTourist {
+	height: 100%;
+    width: 100px;
+    font-size: 17px;
+    border: none;
+    background: whitesmoke;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.day {
+    display: flex;
+    width : 700px;
+}
+
+.day div {
+	width: 300px;
+	margin: 0px;
+}
+
+.day input {
+	width: 220px;
+    border: none;
+    background: whitesmoke;
+    padding-left: 30px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.product_btn{
+    font-size: 17px;
+    width: 100px;
+    height: 40px;
+    background: #007ac9;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+}
+
+.hotel_name_wrap p{
+    font-size: 18px;
+    color: gray;
+}
+
+.review_sub{
+	display: flex;
+    font-size: 18px;
+    padding: 5px;
+    width: 300px;
+    height: 30px; 	
+    color: #fff;
+    text-align: center; 
+    margin-bottom: 30px;       
+}
+
+.review_rate{
+	    font-size: 18px;
+    padding: 5px;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    background:#007ac9;
+    color: #fff;
+    text-align: center;    
+}
+
+.review_sub .txt{
+	margin-top: 5px;
+	margin-left: 15px;
+    font-size: 20px;
+    color: #007ac9;
+}
+
+.indexBar {
+    width: 1200px;
+    display : flex;
+     margin : 10px 0;
+}
+
+.indexButton {
+	
+  	width: 250px;
+    height: 40px;
+    text-align: center;
+    margin : auto;
+    border-radius: 10px ;
+  	background-color: whitesmoke;
+}
+
+.indexButton a{
+  position: relative;
+  top: 5px;
+}
+
+.indexButton:hover {
+    background-color: aliceblue;
+}
+
+.indexButton a, a:visited {
+    text-decoration: none;
+    line-height: 30px;
+    color : black;
+}
+
+#hotelNearInfo {
+    width: 1200px;
+    display : flex;
+    margin : 10px 0;
+}
+
+#rooms_info {
+    width: 1200px;
+  
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 50px;
+     background-color: whitesmoke;
+}
+
+.rooms {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    padding: 0px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #fff;
+   padding:10px;
+}
+
+.room_img_wrap {
+    width: 200px;
+    height: 170px;
+}
+
+.room_img_wrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.room_info_wrap {
+    width: 500px;
+    height: 180px;
+    display: block;
+}
+
+.room_detail_button{
+	position: relative;
+    left: 25px;
+    top: 10px;
+}
+
+
+
+.room_name {
+    width: 400px;
+    height: 60px;
+    margin-top: 50px;
+    margin-left: 30px;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+.room_detail_button input {
+    width: 100px;
+    height: 30px;
+    margin-top : 10px;
+    margin-left: 30px;
+}
+
+.room_wrap {
+	width: 100px;
+	height: 180px;
+	margin-right: 30px;
+}
+
+.room_price_wrap {
+    height: 180px;
+    margin-right: 40px;
+}
+
+.room_price {
+    margin-top: 120px;
+}
+
+.room_cart {
+    height: 180px;
+    margin-right: 40px;
+}
+
+.cart_button_wrap {
+    margin-top: 120px;
+}
+
+.room_reserve {
+    height: 300px;
+    margin-right: 40px;
+}
+
+.reserve_button_wrap {
+    margin-top: 120px;
+}
+
+#map {
+	width: 1200px;
+	height: 400px;
+}
+
+.map_wrap, .map_wrap * {margin:0; padding:0;font-family:'Malgun Gothic',dotum,'돋움',sans-serif;font-size:12px;}
+.map_wrap {position:relative;width:100%;height:350px;}
+#category {position:absolute;top:10px;left:10px;border-radius: 5px; border:1px solid #909090;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);background: #fff;overflow: hidden;z-index: 2;}
+#category li {float:left;list-style: none;width:50px;border-right:1px solid #acacac;padding:6px 0;text-align: center; cursor: pointer;}
+#category li.on {background: #eee;}
+#category li:hover {background: #ffe6e6;border-left:1px solid #acacac;margin-left: -1px;}
+#category li:last-child{margin-right:0;border-right:0;}
+#category li span {display: block;margin:0 auto 3px;width:27px;height: 28px;}
+#category li .category_bg {background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_category.png) no-repeat;}
+#category li .bank {background-position: -10px 0;}
+#category li .mart {background-position: -10px -36px;}
+#category li .pharmacy {background-position: -10px -72px;}
+#category li .oil {background-position: -10px -108px;}
+#category li .cafe {background-position: -10px -144px;}
+#category li .store {background-position: -10px -180px;}
+#category li.on .category_bg {background-position-x:-46px;}
+.placeinfo_wrap {position:absolute;bottom:28px;left:-150px;width:300px;}
+.placeinfo {position:relative;width:100%;border-radius:6px;border: 1px solid #ccc;border-bottom:2px solid #ddd;padding-bottom: 10px;background: #fff;}
+.placeinfo:nth-of-type(n) {border:0; box-shadow:0px 1px 2px #888;}
+.placeinfo_wrap .after {content:'';position:relative;margin-left:-12px;left:50%;width:22px;height:12px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.placeinfo a, .placeinfo a:hover, .placeinfo a:active{color:#fff;text-decoration: none;}
+.placeinfo a, .placeinfo span {display: block;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+.placeinfo span {margin:5px 5px 0 5px;cursor: default;font-size:13px;}
+.placeinfo .title {font-weight: bold; font-size:14px;border-radius: 6px 6px 0 0;margin: -1px -1px 0 -1px;padding:10px; color: #fff;background: #d95050;background: #d95050 url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png) no-repeat right 14px center;}
+.placeinfo .tel {color:#0f7833;}
+.placeinfo .jibun {color:#999;font-size:11px;margin-top:0;}
+
+#hotelInfo {
+    width : 1200px;
+    background-color: rgb(220, 232, 243);
+    border-radius: 10px 10px;
+    padding : 10px;
+    margin : 10px 0;
+}
+
+.hotelDetailInfo li {
+    list-style : none;
+    margin : 20px auto;
+}
+
+.title {
+    font-size: 16px;
+    color: black;
+}
+
+.txt {
+    font-size : 14px;
+    color : grey;
+}
+.nonuserInfo{
+ width: 650px;
+position: relative;
+ display: flex;
+top:50px;
+ left: 80px;
+ font-size: 20px;
+ color: #007ac9;
+}
+
+#review {
+    width : 1200px;
+}
+
+.goods_review{
+    height: 200px;
+    border-bottom:1px solid gray;
+}
+
+
+
+#reviewHotelScore {
+    width: 100%;
+    text-align: center;
+    margin : 10px 0;
+}
+
+.scoreWrap {
+    width : 200px;
+    float: left;
+    padding: 30px ;
+    margin-left: 80px; 
+    
+ 
+}
+
+.goodsId_wrap{
+    display: flex;
+}
+
+
+
+
+
+.review_title{
+    margin-bottom: 15px; 
+}
+
+.review_score{
+    font-size: 15px;
+    padding: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    width: 70px;
+    height: 30px;
+    border-radius: 5px;
+    background:#007ac9;
+    color: #fff;
+    text-align: center; 
+    margin-right: 10px;
+}
+
+.review_score_title{
+    font-size: 17px;
+    color:#007ac9;
+    margin-right: 20px;
+}
+
+
+
+.review_name{
+    margin-right: 20px;
+}
+.review_date{
+    float: right;
+    margin-right: 10px;
+}
+
+.review_goods_name{
+    margin-bottom: 15px;
+}
+
+
+.reviewInputWrap {
+    display : flex;
+    padding : 20px;
+    margin : 10px 0;
+    
+}
+
+.reviewInput{
+    margin-left: 30px;
+
+}
+
+.reviewInput textarea {
+    width: 300px;
+    height: 70px;
+}
+
+
+.userInfo {
+    display: flex;
+    margin : 0 10px;
+}
+
+.reviewButtonWrap {
+    margin-top: 10px;
+    height: 30px;
+    
+}
+
+
+.reviewInputWrap {
+    height: 150px;
+}
+
+.reviewButtonWrap input{
+    
+    font-size: 12px;
+    border: none;
+    width: 65px;
+    color: #fff;
+    background-color: #007ac9; 
+}
+
+.select_goodsName{
+    width: 180px;
+}
+
+.reviewButton {
+    width : 100%;
+    height: 80%;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin : auto;
+}
+
+.review {
+    margin : 10px 0;
+}
+
+.review_list{
+	
+	 background-color: whitesmoke;
+ 
+	  padding: 20px;
+	  border-radius: 20px;
+}
+
+
+.reviews ul {
+    list-style: none;
+}
+
+.reviews li {
+    padding : 10px;
+    border-bottom: 1px solid grey;
+}
+
+
+/*모달 창 css*/
+#modal {
+
+  position:relative;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+        
+#modal h2 {
+  margin:0;
+}
+#modal button {
+  display:inline-block;
+  width:100px;
+  margin-left:calc(100% - 100px - 10px);
+}
+
+.modal_content{
+	display:flex;
+}
+
+.modal_close_btn{
+	margin-left: 30px;
+	border:none;
+    height: 40px;
+    
+   
+}
+.modal_detail_div{
+	margin-left: 70px;
+}
+
+#modal .modal_content {
+  width:300px;
+  margin:100px auto;
+  padding:20px 10px;
+  background:#fff;
+  border:2px solid #666;
+}
+
+#modal .modal_layer {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index:-1;
+}   
+.modal_detail_div_1{
+	width:350px;
+	height: 450px;
+	overflow-y: auto;
+	overflow-x:hidden;
+	border-radius: 15px;
+
+}
+.modal_detail_div_2{
+	 background:#fff;
+	 width:230px;
+	 border-radius: 15px;
+	 padding: 20px;
+	 line-height: 35px;
+
+
+}
+
+.modal_detail_div_3{
+	 background:#fff;
+	 width:230px;
+	 border-radius: 15px;
+	  padding: 20px;
+	line-height: 35px;
+}
+
+.modal_detail_div_3 img{
+	width:35px;
+	margin-right: 10px;
+}
+
+.modal_detail_span{
+	margin-right: 20px;
+}
+
+.modal_detail_div_3 span{
+	display:flex;
+
+}
+.modal_detail_goodsName{
+	margin-bottom: 15px;
+}

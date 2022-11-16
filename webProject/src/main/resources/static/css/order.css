@@ -1,0 +1,170 @@
+@charset "UTF-8";
+
+	.content_area {
+   	Width:1000px;
+   	margin: auto;
+   	}
+   	
+    .tours_Info_total { 
+    float: right;
+    width:600px;
+    background-color: whitesmoke;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+
+    }
+    
+   .tours_Info_total_input input{ 
+	width:200px;
+	height:30px;
+	border:none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	padding:6px;
+    }
+    
+    .orderGoods_div {
+    width:1000px;
+    margin: auto;
+     padding: 15px;
+    }
+    
+    .pay_table_top {
+	background-color: whitesmoke;
+	 text-align: center;
+    }
+    
+   
+    
+    .total_info_div {
+    float: left;
+    width: 300px;
+    background-color: whitesmoke;
+    padding: 15px;
+    border-radius: 15px;
+    }
+    
+    .total_info_div2 {
+     margin: auto;
+    
+    }
+
+    .total_info_btn_div {
+    margin: auto;
+    text-align: center;
+    padding:10px;
+    display:flex;
+    justify-content: space-between;
+    }
+    
+    .point_table {
+    margin: auto;
+    text-align: center;
+    }
+    
+    .total_info_price_div li {
+   	list-style: none;
+    }
+    
+    tourlistInfo {
+    text-align: center;
+    }
+    
+    
+    .gender li {
+    list-style: none;
+    float: left;
+    }
+    
+    .pointbuttondiv {
+	
+    float: left;
+    margin-top: 15px;
+    }
+    
+.goods_name {
+                float: left;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 600px;
+            }
+        
+        #order_button_id {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #007ac9;
+	color: white;
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#order_button_id:active, #order_button_id:hover, #order_button_id:focus {
+	background:orange;
+	outline: 0;
+}
+
+#order_button_id:disabled {
+	opacity: 0.5;
+}
+     
+     
+    
+     
+#order_kakao_button_id  {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: yellow;
+	color: rgb(128, 78, 32);
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#order_kakao_button_id:active, #order_kakao_button_id:hover, #order_kakao_button_id:focus {
+	background: rgb(104, 74, 30);
+	color: white;
+	outline: 0;
+}
+
+#order_kakao_button_id :disabled {
+	opacity: 0.5;
+}
+
+     
+        
+.pay_button {
+border-radius: 4px;
+
+}       
+
+        

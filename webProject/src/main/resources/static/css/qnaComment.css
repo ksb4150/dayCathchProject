@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+#comment-top h3{
+	
+    text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+
+#btnRegister, #btnList {
+   
+    padding:9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 86, 88);
+    border:none;
+    cursor:pointer;
+    text-align:center;
+    width:100px;
+    height:40px;
+    font-size:12px;
+}
+
+#btnRegister, #btnList:hover {
+    background-color: #ccd3db;
+    color:aliceblue;
+}
+
+.btn{
+	margin-left:190px;
+}
+
+input[type="text"] {
+	height: 20px;
+}
+
+#title {
+	width:470px;
+}
+
+ td {
+    font-size: 12px;
+    font-weight: 300;
+    padding: 4px;
+    width: 50px;
+    height: 20px;
+}

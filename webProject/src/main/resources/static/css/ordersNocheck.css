@@ -1,0 +1,66 @@
+h2 {
+	margin-top: 90px;
+	text-align: center;
+    margin-bottom: 0px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+	
+}
+
+.non_user_ordersNo_CheckPage {
+	margin: 0 auto;
+	text-align: center;
+	width: 1100px;
+	height: 600px;
+}
+
+input#ordersNO {
+    margin-top: 14px;
+    padding: 5px;
+}
+
+hr {
+    margin-top: 15px;
+}
+
+.ordersNOcheck_form {
+	margin: 0 auto;
+	margin-top: 60px;
+	width: 300px;
+	height: 290px;
+	border: 2px solid gainsboro;
+}
+
+#ordersNO_check_button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: #007ac9;
+	color: white;
+	margin: 0;
+	padding: 0.5rem 1rem;
+	font-family: 'Noto Sans KR', sans-serif;
+	font-size: 0.9rem;
+	font-weight: 400;
+	text-align: center;
+	text-decoration: none;
+	border: none;
+	border-radius: 4px;
+	display: inline-block;
+	width: auto;
+	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px
+		rgba(0, 0, 0, 0.06);
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#ordersNO_check_button:active, #ordersNO_check_button:hover,
+	#ordersNO_check_button:focus {
+	background: rgb(221, 120, 252);
+	outline: 0;
+}
+
+#ordersNO_check_button:disabled {
+	opacity: 0.5;
+}

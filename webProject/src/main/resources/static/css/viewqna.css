@@ -1,0 +1,91 @@
+form{
+	margin-left:0px;
+}
+
+.contents h2{
+	
+    text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+.viewqna h2{
+	text-align: center;
+    margin-bottom: 52px;
+    font-size: 28px;
+    color: rgb(49, 49, 49);
+    font-weight: 300;
+}
+
+.viewqna {
+    margin-left: 200px;
+}
+
+
+input#i_title {
+    height: 20px;
+    width: 380px;
+    margin-bottom: 5px;
+}
+
+textarea#i_content {
+    width: 385px;
+    height: 220px;
+    margin-left: 4px;
+}
+
+[type=button] {
+   
+    padding:9px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(84, 86, 88);
+    border:none;
+    cursor:pointer;
+    text-align:center;
+  
+    font-size:12px;
+
+}
+
+[type=button]:hover {
+    background-color: #ccd3db;
+    color:aliceblue;
+}
+
+#inp_csNO, #inp_writer, #inp_title, #inp_writeDate, #inp_content{
+    font-size:12px;
+    font-weight:300;
+    padding:10px;
+    width:50px;
+    height:20px;
+}
+
+.inp_content2{
+    width:380px; 
+    height:160px;
+    text-align: left;
+
+}
+
+#inp_csNO2, #inp_writer2, #inp_title2{
+    height:20px;
+    width:380px;
+    margin-bottom:5px;
+}
+
+#inp_writeDate2 {
+    padding-left:10px;
+    margin-left:15px;
+    width: 380px;
+    height:20px;
+}
+
+#tr_btn_modify{
+    margin-right:200px;
+}
+#tr_btn{
+    margin-right:150px;
+}
+

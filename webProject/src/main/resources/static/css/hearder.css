@@ -1,0 +1,158 @@
+@charset "UTF-8";
+nav a:link, nav a:visited, nav a:active {
+    text-decoration: none;
+    color: #444444;
+}
+
+nav span {
+	color: darkgrey;
+	font-size: 13px;
+}
+
+.clear {
+    clear: both;
+}
+
+/*--------------헤더 ------------*/
+header {
+    width: 100%;
+    height: 120px;
+    min-width: 1200px;
+
+    
+}
+
+header #top {
+    width: 1200px;
+    margin: 0 auto;
+
+
+    /* border : solid 1px #0000ff; */
+}
+
+header #logo {
+    float: left;
+    position: relative;
+    top: 5px;
+    /* border:solid 1px #000000; */
+}
+
+/* 검색 */
+header #search {
+    float: right;
+    font-family: "Sans-serif";
+    font-size: 12px;
+    color: #199AF1;
+    position: relative;
+    bottom: 30px;
+    right: 400px;
+
+
+    /* border:solid 1px #000000; */
+}
+
+header #search #search_title {
+    float: left;
+    margin-top: 0px;
+}
+
+header #search #search_form {
+    float: left;
+
+}
+
+header #search #search_form input {
+    width: 100px;
+    height: 14px;
+    border: 0;
+    border-bottom: solid 1px #199AF1;
+    margin-left: 5px;
+    display: flex;
+}
+
+header #search #search_button {
+    float: right;
+}
+
+/* 상단 메뉴 */
+header #top_menu {
+    height: 30px;
+    float: right;
+    margin-top: 15px;
+    /*border:solid 1px #000000; */
+}
+
+#top_menu ul {
+	margin : 0px;
+}
+
+header #top_menu a {
+    color: darkgrey;
+    font-size: 13px;
+
+    /*border:solid 1px #000000; */
+}
+
+header #top_menu li {
+    display: inline;
+    margin-left: 30px;
+}
+
+/* 메인 메뉴 */
+header #main_menu {
+    height: 83px;
+    /* position: relative; */
+    display: flex;
+    background-color: #fff;
+    /* align-content: center; */
+    justify-content: center;
+    border-bottom: 2px solid black;
+
+
+    /* border: solid 1px #0000ff; */
+}
+
+header #main_menu ul {
+    width: 1200px;
+    /* margin: auto; */
+    height: 60px;
+    /* position: relative; */
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    list-style: none;
+    /* justify-content: space-between; */
+}
+
+header #main_menu li {
+    /* display: inline; */
+    margin-left: 40px;
+    font-size: 18px;
+}
+
+.btn_total_search {
+    background-color: #fff;
+    border: none;
+    height: 15px;
+    bottom: 10px;
+    right: 0px;
+    cursor: pointer;
+    
+}
+
+.btn_total_search img{
+	width: 250px;
+    height: 40px;
+	
+}
+
+.btn_all_categrory {
+    width: 100px;
+    position: relative;
+    border: none;
+    background-color: #fff;
+    right: 40px;
+    cursor: pointer;
+}

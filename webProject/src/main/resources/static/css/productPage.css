@@ -1,0 +1,340 @@
+@charset "UTF-8";
+
+.contents_area{
+    width: 100%;
+    margin-bottom:50px;
+}
+
+
+.contents{
+    width: 1200px;
+    margin: auto;
+  
+}
+
+.backgroundImg1 {
+	width:100%;
+    height: 300px;
+    position: relative;
+    background-image: url('../img/productPagebanner.png');
+    z-index : 0;
+    top:7.5px;
+    padding:0px;
+}
+
+.backgroundImg2 {
+	width:100%;
+    height: 300px;
+    position: relative;
+    background-image: url('../img/prudocuPage2banner.png');
+    z-index : 0;
+    top:7.5px;
+    padding:0px;
+}
+
+.searchBox {
+    height: 300px;
+    width: 1200px;
+    position: relative;
+    top : -120px;
+    padding : 10px;
+    margin : auto;
+    z-index : 1;
+    background-color: #fff;
+    border-radius: 15px;
+   box-shadow: 1px 1px 10px gray;
+}
+
+.iconBar {
+    width: 100%;
+    height: 150px;
+    padding : 10px 0px;
+    display: flex;
+    align-items: center;
+   
+  	 border-bottom: 1px solid #ddd;
+}
+
+.iconBar ul {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    margin:auto;
+    justify-content: center;
+    text-align: center;
+}
+
+.iconBar li{
+    margin: 0px 50px;
+    padding: 0px;
+}
+
+.iconBar p {
+    width : 90px;
+    height: 90px;
+}
+
+.iconBar a, a:active, a:focus {
+    color : black;
+    text-decoration: none;
+}
+
+.iconBar img {
+    width: 100%;
+    height: 100%;
+} 
+
+.iconHotel:hover {
+   content: url('../img/hotelColor.png')
+}
+
+.iconTourism:hover {
+    content: url('../img/tourismColor.png')
+}
+
+.iconAirpalne:hover{
+   content: url('../img/airplaneColor.png')
+}
+
+.iconFestival:hover {
+   content: url('../img/festivalColor.png')
+}
+
+.iconCommunity:hover {
+   content: url('../img/communityColor.png')
+}
+
+.iconEvent:hover {
+   content: url('../img/eventColor.png')
+}
+
+#search {
+    padding : 12px 25px;
+    height: 100px;
+    margin-left: 20px;
+ 
+}
+
+#search form {
+	width: 100%;
+	display: flex;
+}
+
+.destination {
+    width : 1000px;
+    margin: 0px;
+    padding: 0px;
+}
+
+#goodsSubCategory {
+	width: 900px;
+	height: 50px;
+    border-radius: 6px;
+    border-style: none;
+
+	}
+
+#searchSubmit {
+	width: 190px;
+	height: 50px;
+	 border-style: none;
+    border-radius: 10px;
+}
+
+
+.searchFormButton {
+  width : 190px;
+   justify-items: center;
+   margin-top: 55px;
+}
+
+
+/* 상품 스타일 */
+
+.product_contents_area{
+    width: 1200px;
+    
+} 
+
+.product_box{
+    width: 100%;
+    display: flex;
+    margin: 10px 0;
+}
+
+.product_item{
+    height: 380px;
+    width: 280px;
+    margin: 0 10px;
+}
+
+.img_wrap {
+	width: 	280px;
+	height: 260px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.img_wrap img {
+	width: 100%;
+	height: 100%;
+    border-radius: 5%;
+}
+
+.product_box a {
+    text-decoration: none;
+    color: black;
+}
+
+
+ .txt_wrap {
+    font-family: Noto_m;
+    width: 250px;
+    height: 100px;
+    margin: 0px;
+    line-height: 20px;
+
+}
+
+.company_name {
+    width: 100%;
+    font-weight: 400; 
+    font-size: 17px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.road_address {
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    font-weight: 400;
+    overflow: hidden;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.product_contens{
+	margin-bottom: 90px;
+}
+
+
+.goods_price {
+	height:50px;
+    width: 150px;
+    text-align: right;
+    font-family: Noto_m!important;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff682c;
+    float: right;
+}
+
+.score{
+	width:70px;
+	float: left;
+	font-size: 14px;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    background: rgb(255, 131, 83);
+    color: #fff;
+    text-align: center;   
+}
+
+.goods_score{
+	width:70px;
+	float: right;
+	  font-size: 14px;
+    padding: 5px;
+    height: 20px;
+    border-radius: 5px;
+    background:#007ac9;
+    color: #fff;
+    text-align: center;    
+}
+
+
+.area_cs_info{
+    width: 1200px;
+    border-top: 1px solid gray;
+    height: 300px;
+    display: flex;
+}
+
+.cs_info{
+    width: 600px;
+    height: 300px;
+    
+    padding: 0px;
+    display: inline-block;
+    text-align: center;
+  
+}
+
+.cs_info ul{
+    list-style: none;   
+}
+
+.area_cs_number{
+    width: 200px;
+    height: 200px;
+    
+  
+    font-size: 30px;
+    float: left;
+}
+
+.area_cs_time{
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid gray ;
+
+ 
+}
+
+.mypage_info{
+	
+    width: 700px;
+    height: 200px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center; 
+}
+
+.mypage_info ul{
+    list-style: none;
+    width: 500px;
+   
+}
+
+.mypage_info ul li{
+    display: inline-block;
+    font-size: 18px;
+}
+
+.mypage_info_btn{
+  width: 150px;
+    padding: 15px;
+    margin-bottom: 5px;
+    border: none;
+    background-color:rgb(251, 182, 0);
+    color: #fff;
+
+}
+
+.product_container{
+    position: relative;
+    width:100%; 
+    margin:auto;
+    top:-20px;
+}

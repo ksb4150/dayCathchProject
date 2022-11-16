@@ -1,0 +1,141 @@
+@charset "Utf-8";
+
+*{
+	text-decoration: none;
+}
+
+a {
+	color: black;
+}
+
+.mypage_hello{
+    font-size: 25px;
+    float: left;
+    margin-left: 35px;
+    
+}
+    
+.mypage_block{
+    margin-top: 30px;
+    line-height: 30px;
+    height: 240px;
+  	background-color: whitesmoke;
+  	border-radius: 20px;
+    margin-bottom: 30px;
+}
+    
+.mypage_block li{       
+    display: inline-block;
+    list-style: none;
+}
+        
+.mypage_link{
+    display: flex;
+    margin: auto;
+    width: 900px;
+    font-size: 15px;
+    color: #555;
+    padding: 0px;
+    margin: 0px;
+    margin-top: 40px;
+}
+
+.mypage_link li{
+    margin: auto;
+    text-align: center;
+    
+}
+
+.mypage_link strong{
+    font-size: 30px;
+}
+
+.bookinglist li{
+    margin-right: 120px;
+    width: 300px;
+    list-style: none; 
+    display: inline-block;
+   
+}
+
+
+.block_tit_area{
+    width: 900px;
+    height: 50px;
+    display: flex;
+}
+
+.stit_con_title{
+    font-size: 20px;
+    width: 500px;
+    height: 20px;
+}
+
+.booking_count{
+    vertical-align:baseline;   
+    height: 100px;
+ 	background-color: whitesmoke;
+  	border-radius: 20px;
+}
+
+.booking_count li{
+   padding-top: 40px;
+
+}
+    
+.booking_count li a{
+    float: right;
+}
+
+   
+.btn_tit_area{      
+  position: relative;
+  margin: auto;
+  top: 15px;
+  left: 90px;
+
+}
+.btn_tit_area button{
+ 	height:30px;
+    width: 100px;
+    border-style: none;
+    border-radius: 10px;
+   
+    
+}
+
+.part_area_in{
+    margin: 0px;
+    width: 460px;
+}
+.content_area1{
+    display: flex;
+   
+}
+
+.content_area1 li{
+    list-style: none;
+    
+}
+
+.list_count{
+   	background-color: whitesmoke;
+  	border-radius: 20px;
+    width: 400px;
+    height: 150px;
+
+}
+
+.list_count li{
+    padding-top: 30px;
+}
+
+.list_count li a{
+    float: right;
+    padding-right: 50px;
+}
+.mypage_link img{
+	 width: 80px;
+    height: 80px;
+}
+
