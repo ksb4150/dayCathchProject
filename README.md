@@ -24,7 +24,7 @@
 * Datapicker
 * Chart.js
 
-2. 설계
+### 2. 설계 <br>
 ### 프로젝트 구조
 ![캡1](https://user-images.githubusercontent.com/74931459/205484694-54a54ff3-56b5-45e8-a70f-470d14152af3.JPG) <br>
 저장소에 있는 board, goods, user 폴더를 넣을 위치입니다. 해당 폴더들은 사업자가 자신의 사진을 등록할 때, 사업자가 자신의 상품 사진을 등록할 때, 사용자가 게시글에 이미지를 등록할 때
